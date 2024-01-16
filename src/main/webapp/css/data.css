@@ -1,0 +1,72 @@
+/* 隐藏所有tab内容 */
+.tab-content {
+    display: none;
+    padding-left: 40px;
+    width: 1260px;
+}
+
+/* 显示当前活动的tab内容 */
+.active {
+    display: block;
+    border: none;
+    background-color: white;
+}
+.body-tab{
+    margin: auto;
+    background-color: whitesmoke;
+    width: 1280px;
+    height: 500px;
+    box-shadow: 0 0 10px grey;
+}
+
+button{
+    float: left;
+    display: block;
+    width: 100px;
+    height: 60px;
+    border: none;
+}
+button:hover{
+    background-color: grey;
+    color: skyblue;
+    font-size: x-large;
+}
+.body-button{
+    height: 60px;
+    width: 1260px;
+    padding-left: 40px;
+
+}
+.tab-content{
+    float: left;
+    width: 1280px;
+    height: 500px;
+    background-color: white;
+}
+.head-data{
+    padding: 0;
+    margin: 0;
+    width: 1260px;
+}
+table{
+    margin: auto;
+    padding: 0;
+    border:grey;
+}
+div .tr-th-name{
+    padding: 20px 30px;
+    background: grey;
+    border-color: grey;
+    margin: 0;
+}
+tbody{
+    text-align: center;
+}
+
+tfoot{
+    text-align: center;
+}
+
+.table-style{
+ margin-top: 10px;
+}
