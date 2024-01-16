@@ -9,37 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Bean/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/border-bar.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/border.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/border-pie.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/bottom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/data.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/head.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/data.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/tab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/picture/data.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/picture/home.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/picture/report.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/picture/set.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/picture/test.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/bottom.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/head.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -192,17 +162,32 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
+    <task id="Default" summary="Default task">
       <changelist id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="" />
       <created>1705391910351</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1705391910351</updated>
-      <workItem from="1705391911383" duration="6258000" />
+      <updated>1705399066533</updated>
+      <workItem from="1705391911383" duration="7021000" />
     </task>
+    <task active="true" id="LOCAL-00001" summary="maven项目">
+      <changelist id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="" />
+      <option name="closed" value="true" />
+      <created>1705398287996</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705399066533</updated>
+      <workItem from="1705399066935" duration="27000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="maven项目" />
+    <option name="LAST_COMMIT_MESSAGE" value="maven项目" />
   </component>
 </project>
