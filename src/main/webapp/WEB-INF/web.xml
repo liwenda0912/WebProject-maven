@@ -4,15 +4,5 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-    <!-- 类名 -->
-    <servlet-name>pop</servlet-name>
-    <!-- 所在的包 -->
-    <servlet-class>pop</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>pop</servlet-name>
-    <!-- 访问的网址 -->
-    <url-pattern>/pop</url-pattern>
-  </servlet-mapping>
+
 </web-app>

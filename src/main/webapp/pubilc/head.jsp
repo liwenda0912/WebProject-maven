@@ -20,8 +20,8 @@
                 <span>首页</span>
             </a>
             <ul class="ul-2">
-                <li class="li-2"><a>首页</a></li>
-                <li class="li-2"><a>首页</a></li>
+                <li class="li-2"><a href="index.jsp">首页</a></li>
+                <li class="li-2"><a href="data.jsp">沙盘</a></li>
             </ul>
         </li>
         <li class="li-1">
@@ -30,8 +30,8 @@
                 <span>报告</span>
             </a>
             <ul class="ul-2">
-                <li class="li-2"><a href="data.jsp">成功</a></li>
-                <li class="li-2"><a href="data.jsp">失败</a></li>
+                <li class="li-2"><a href="testResult.jsp">成功</a></li>
+                <li class="li-2"><a href="testResult.jsp">失败</a></li>
             </ul>
         </li>
         <li class="li-1">
@@ -50,8 +50,8 @@
                 <span>数据</span>
             </a>
             <ul class="ul-2">
-                <li class="li-2"><a>记录</a></li>
-                <li class="li-2"><a>数据</a></li>
+                <li class="li-2"><a href="data.jsp">记录</a></li>
+                <li class="li-2"><a href="pubilc/uploadFile.jsp">数据</a></li>
             </ul>
         </li>
         <li class="li-1">
@@ -60,8 +60,8 @@
                 <span>设置</span>
             </a>
             <ul class="ul-2">
-                <li class="li-2"><a>成员</a></li>
-                <li class="li-2"><a>密码</a></li>
+                <li class="li-2"><a href="members_set.jsp">成员</a></li>
+                <li class="li-2"><a href="members_set.jsp">密码</a></li>
             </ul>
         </li>
     </ul>

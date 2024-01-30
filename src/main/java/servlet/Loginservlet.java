@@ -21,30 +21,40 @@ public class LoginServlet extends HttpServlet {
           String Passwd = request.getParameter("passwd");
         if (Objects.equals(UserName, "1")) {
             if (!Objects.equals(Passwd, "1")) {
-                response.setCharacterEncoding("gb2312");
-                PrintWriter out = response.getWriter();
-                out.print("<script>alert('您输入的密码错误，请重新输入...')</script>");
-                out.print("<script>window.location='index.jsp'</script>");
-                out.flush();
-                out.close();
+//                response.setCharacterEncoding("gb2312");
+//                PrintWriter out = response.getWriter();
+//                out.print("<script>alert('您输入的密码错误，请重新输入...')</script>");
+//                out.print("<script>window.location='index.jsp'</script>");
+//                out.flush();
+//                out.close();
+                request.setAttribute("notice",2);
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Result.jsp");
+                dispatcher.forward(request, response);
             } else {
-                response.setCharacterEncoding("gb2312");
-                PrintWriter out = response.getWriter();
-                out.print("<script>alert('123')</script>");
-                out.print("<script>window.location='index.jsp'</script>");
+//                response.setCharacterEncoding("gb2312");
+//                PrintWriter out = response.getWriter();
+//                out.print("<script>alert('123')</script>");
+//                out.print("<script>window.location='index.jsp'</script>");
 //                HttpSession session = request.getSession();
                 // 设置session中的值
                 request.setAttribute("username",UserName);
-                request.setAttribute("key",1);
-                request.getRequestDispatcher("index.jsp").forward(request,response);
+                request.setAttribute("notice",1);
+//                request.setAttribute("key","true");
+//                request.setAttribute("input","false");
+                request.setAttribute("keys","name");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Result.jsp");
+                dispatcher.forward(request, response);
             }
         } else {
-            response.setCharacterEncoding("gb2312");
-            PrintWriter out = response.getWriter();
-            out.print("<script>alert('您输入的账号错误，请重新输入...')</script>");
-            out.print("<script>window.location='index.jsp'</script>");
-            out.flush();
-            out.close();
+//            response.setCharacterEncoding("gb2312");
+//            PrintWriter out = response.getWriter();
+//            out.print("<script>alert('您输入的账号错误，请重新输入...')</script>");
+//            out.print("<script>window.location='index.jsp'</script>");
+//            out.flush();
+//            out.close();
+            request.setAttribute("notice",2);
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Result.jsp");
+            dispatcher.forward(request, response);
         }
     }
 }

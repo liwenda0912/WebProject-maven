@@ -36,13 +36,16 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-              </tr>
+                  <% String[] data = new String[]{"1", "2","3","4","5"};
+                      for(int i=0;i<data.length;i++){%>
+                  <tr>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  </tr>
+                  <%}%>
               </tbody>
               <tfoot>
               <tr>
@@ -65,13 +68,17 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-              </tr>
+
+                  <% String[] data_1 = new String[]{"1", "2","3","4","5"};
+                      for(int i=0;i<data_1.length;i++){%>
+                  <tr>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  </tr>
+                  <%}%>
               </tbody>
               <tfoot>
               <tr>
@@ -94,13 +101,18 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-                  <td>1</td>
-              </tr>
+
+                  <% String[] data_2 = new String[]{"1", "2","3","4","5"};
+                      for(int i=0;i<data_2.length;i++){%>
+                  <tr>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  <td><%=data[i]%></td>
+                  </tr>
+                  <%}%>
+
               </tbody>
               <tfoot>
               <tr>
