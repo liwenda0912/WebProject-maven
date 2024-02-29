@@ -57,12 +57,12 @@ input {
 .border-msg-2{
     margin-top: 10px;
     width: 1245px;
-    height: 220px;
+    height: 260px;
 }
 #input-msg{
     float: right;
-    height: 200px;
-    width: 300px;
+    height: 260px;
+    width: 350px;
     background-color: white;
     margin-right: 20px;
     border:2px solid white;
@@ -70,8 +70,8 @@ input {
     box-shadow: 0 0 10px grey;
 }
 #show-msg{
-    width: 850px;
-    height: 200px;
+    width: 800px;
+    height: 260px;
     background-color: white;
     border:2px solid white;
     border-radius: 20px;
@@ -80,25 +80,13 @@ input {
     box-shadow: 0 0 10px grey;
 }
 #input-name{
-    padding: 30px 20px;
+    padding-left: 20px;
+    width: 260px;
+
 }
 #input-passwd{
     padding-left: 20px;
-}
-.buttom_login{
-    padding-left: 100px;
-    padding-top: 20px;
-
-}
-
-button{
-    width: 60px;
-    height: 30px;
-}
-button:active{
-    background-color: cadetblue;
-    box-shadow: 0 0 10px cadetblue;
-    transform: translateY(4px);
+    width: 260px;
 }
 #black{
     display: block;

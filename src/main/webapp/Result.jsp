@@ -13,21 +13,19 @@
     <title>Title</title>
 </head>
 <body>
-<%int n = (int) request.getAttribute("notice"); %>
-<router-link :to="{name:name,query:{name:<%=n%>,code:8899}}"></router-link>
 <div id="app">
-  <el-result icon="error" title="输入的账号密码错误！请重新输入" subTitle="输入的账号密码错误！请重新输入" v-if="<%=n%>==error">
+  <el-result icon="error" title="输入的账号密码错误！请重新输入" subTitle="输入的账号密码错误！请重新输入" v-if="obj==error">
     <template slot="extra">
       <el-button type="primary" size="medium" @click="change_show()">返回</el-button>
     </template>
   </el-result>
 
-  <el-result icon="success" title="登录成功" subTitle="登录成功！" v-else-if="<%=n%>==success">
+  <el-result icon="success" title="登录成功" subTitle="登录成功！" v-else-if="obj==success">
     <template slot="extra">
       <el-button type="primary" size="medium" @click="change_show()">返回</el-button>
     </template>
   </el-result>
-  <el-result icon="alert" title="信息提示" subTitle="请根据提示进行操作!" v-else="<%=n%>==alert">
+  <el-result icon="alert" title="信息提示" subTitle="请根据提示进行操作!" v-else="obj==alert">
     <template slot="extra">
       <el-button type="primary" size="medium" @click="change_show()">返回</el-button>
     </template>
@@ -39,20 +37,23 @@
 <script src="//unpkg.com/element-ui@2.15.14/lib/index.js"></script>
 
 <script>
-  <%String username = (String) request.getAttribute("username"); %>
-  var result = '<%=username%>';
+  let search = window.location.search;
+  let urlParams = new URLSearchParams(search);
+  let obj = JSON.parse(urlParams.get('data'));
+  // console.log(obj)
   new Vue({
     el: '#app',
     data: {
       success:1,
       error:2,
-      alert:0
+      alert:0,
+      obj:obj
     },
     methods: {
       change_show(){
         window.location.href="index.jsp";
-        if (result!==''||result!==null){
-          localStorage.setItem("name",JSON.stringify(result))
+        if (obj===this.success){
+          localStorage.setItem("name",JSON.stringify(obj))
           console.log(JSON.parse(localStorage.getItem("name")))
         }
       }

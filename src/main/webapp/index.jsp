@@ -15,10 +15,16 @@
     <title>www.webapp.servlet.pop.com</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <link rel="stylesheet" href="//unpkg.com/element-ui@2.15.14/lib/theme-chalk/index.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/2.6.0/vue-router.js"></script>
+    <!-- import Vue before Element -->
+<%--    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>--%>
+<%--    <!-- import JavaScript -->--%>
+<%--    <script src="https://unpkg.com/element-ui/lib/index.js"></script>--%>
     <script src="//unpkg.com/vue@2/dist/vue.js"></script>
     <script src="//unpkg.com/element-ui@2.15.14/lib/index.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
 <%String username = (String) request.getAttribute("username"); %>
 <div class="all-style">
@@ -35,76 +41,35 @@
     </div>
     <div class="border-msg-2">
         <div id="input-msg" >
-           <div id = app>
+           <div id ="app">
                <div v-if="name_show==1" id="app_relogin">
                    <p>{{name_show}}</p>
-                   <button @click="login_down()">退出登录</button>
+                   <button type="button" v-on:click="login_down()">退出登录</button>
                </div>
               <div v-else>
-                  <form action="LoginServlet" method="post">
-                      <div id="input-name">
-                          UserName:
-                          <label>
-<%--                              <el-input placeholder="请输入账号" v-model="input" clearable name="username" type="text"></el-input>--%>
-                              <input type="text" placeholder="请输入名字" name="username">
-                          </label>
-                      </div>
-                      <div id="input-passwd">
-                          PassWord:
-                          <label>
-<%--                              <el-input placeholder="请输入密码" v-model="input" show-password name="passwd" type="password"></el-input>--%>
-                              <input type="password" placeholder="请输入密码" name="passwd">
-                              {{name_show}}
-                          </label>
-                      </div>
-                      <div class="buttom_login">
-                          <button @click="change_show()">Button</button>
-                      </div>
+                  {{name_show}}
+                  <form method="post" action="LoginServlet">
+                      <iframe src="login_input.jsp" scrolling="no" height="250px" width="350px" style="border: 0">
+                      </iframe>
                   </form>
               </div>
-
            </div>
         </div>
         <div id="show-msg">
             <%@include file="pubilc/uploadFile.jsp"%>
+
+
+<%--            <iframe src="pubilc/uploadFile.jsp" scrolling="no" height="260px" width="800px" style="border: 0"></iframe>--%>
         </div>
     </div>
 
-    <div id="black"></div>
+    <div id="black">
+    </div>
     <div class="bottom">
         <%@ include file="pubilc/bottom.jsp"%>
     </div>
 </div>
 </body>
-<!-- import Vue before Element -->
-<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
-<!-- import JavaScript -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script>
-
-    let name =JSON.parse(localStorage.getItem("name"))
-    new Vue({
-        el: '#app',
-        data:{
-            // isshow: true,
-            // ishow: false,
-            name_show:name
-        },
-        methods:{
-            change_show(){
-            },
-            login_down(){
-                localStorage.removeItem("name");
-                this.$message({
-                    message: '退出登录成功！',
-                    center: true
-            });
-                setTimeout(()=>{
-                    location.reload();
-                },100)}
-           },
-
-    })
-
-</script>
+<script src="https://unpkg.com/vue-router@4"></script>
+<script src="js/login.js"></script>
 </html>

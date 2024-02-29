@@ -19,42 +19,31 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
           String UserName = request.getParameter("username");
           String Passwd = request.getParameter("passwd");
-        if (Objects.equals(UserName, "1")) {
-            if (!Objects.equals(Passwd, "1")) {
-//                response.setCharacterEncoding("gb2312");
-//                PrintWriter out = response.getWriter();
-//                out.print("<script>alert('您输入的密码错误，请重新输入...')</script>");
-//                out.print("<script>window.location='index.jsp'</script>");
-//                out.flush();
-//                out.close();
-                request.setAttribute("notice",2);
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Result.jsp");
-                dispatcher.forward(request, response);
-            } else {
-//                response.setCharacterEncoding("gb2312");
-//                PrintWriter out = response.getWriter();
-//                out.print("<script>alert('123')</script>");
-//                out.print("<script>window.location='index.jsp'</script>");
-//                HttpSession session = request.getSession();
-                // 设置session中的值
-                request.setAttribute("username",UserName);
-                request.setAttribute("notice",1);
-//                request.setAttribute("key","true");
-//                request.setAttribute("input","false");
-                request.setAttribute("keys","name");
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Result.jsp");
-                dispatcher.forward(request, response);
-            }
-        } else {
-//            response.setCharacterEncoding("gb2312");
-//            PrintWriter out = response.getWriter();
-//            out.print("<script>alert('您输入的账号错误，请重新输入...')</script>");
-//            out.print("<script>window.location='index.jsp'</script>");
-//            out.flush();
-//            out.close();
-            request.setAttribute("notice",2);
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Result.jsp");
-            dispatcher.forward(request, response);
-        }
+//          request.setAttribute("keys-test",UserName);
+//          RequestDispatcher dispatcher_test = getServletContext().getRequestDispatcher("/Result.jsp");
+//          dispatcher_test.forward(request, response) ;
+          if(UserName.isEmpty()){
+              RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login_input.jsp");
+              dispatcher.forward(request, response);
+          }else {
+              if (Objects.equals(UserName, "1")) {
+                  if (!Objects.equals(Passwd, "12345678")) {
+                      String data= "{\"notice\":\"2\",\"name\":12}";
+                      response.setContentType("application/json");
+                      response.getWriter().write(data);
+                  } else {
+                      // 设置session中的值
+                      String data= "{\"notice\":\"1\",\"name\":12}";
+                      response.setContentType("application/json");
+                      response.getWriter().write(data);
+
+                  }
+              } else {
+                  String data= "{\"notice\":\"2\"}";
+                  response.setContentType("application/json");
+                  response.getWriter().write(data);
+              }
+          }
+
     }
 }

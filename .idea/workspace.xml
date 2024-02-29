@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="mavenproject:war" />
       <artifact name="mavenproject:war exploded" />
     </artifacts-to-build>
   </component>
@@ -11,38 +10,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/Result.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/result.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/members_set.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/uploadFile.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/testResult.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/require.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login_input.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/data.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pubilc/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/testResult.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/testResult.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
         <option value="servlet" />
-        <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Jsp File" />
+        <option value="package.json" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -61,6 +64,9 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2b1oNWk24Z7fb6gxDoCbbrz8vJV" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -74,13 +80,17 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "16.18.1",
+    "javascript.nodejs.core.library.typings.version": "16.18.1",
     "last_directory_selection": "D:/Java/mavenproject/src/main/java",
-    "last_opened_file_path": "D:/Java/mavenproject",
+    "last_opened_file_path": "D:/Java/webproject",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -111,10 +121,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.51">
+    <configuration name="login_input.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/login_input.jsp">
+      <method v="2" />
+    </configuration>
     <configuration name="testResult.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/testResult.jsp">
       <method v="2" />
     </configuration>
+    <configuration name="test.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/test.jsp">
+      <method v="2" />
+    </configuration>
     <configuration name="uploadFile.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/pubilc/uploadFile.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="input.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/main/webapp/js/input.js" working-dir="$PROJECT_DIR$/src/main/webapp/js">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 8.0.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.51" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -206,12 +225,18 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.login_input.jsp" />
+      <item itemvalue="JavaScript Debug.test.jsp" />
       <item itemvalue="JavaScript Debug.testResult.jsp" />
       <item itemvalue="JavaScript Debug.uploadFile.jsp" />
+      <item itemvalue="Node.js.input.js" />
       <item itemvalue="Tomcat Server.Tomcat 8.0.51" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.login_input.jsp" />
+        <item itemvalue="Node.js.input.js" />
+        <item itemvalue="JavaScript Debug.test.jsp" />
         <item itemvalue="JavaScript Debug.uploadFile.jsp" />
         <item itemvalue="JavaScript Debug.testResult.jsp" />
       </list>
@@ -236,6 +261,13 @@
       <option name="project" value="LOCAL" />
       <updated>1705399066533</updated>
       <workItem from="1705399066935" duration="78572000" />
+      <workItem from="1706597095274" duration="35388000" />
+      <workItem from="1707112863260" duration="3772000" />
+      <workItem from="1707116695658" duration="42491000" />
+      <workItem from="1708594311200" duration="130000" />
+      <workItem from="1708594452942" duration="86000" />
+      <workItem from="1708594800056" duration="3384000" />
+      <workItem from="1708752797419" duration="31597000" />
     </task>
     <task id="LOCAL-00002" summary="maven项目">
       <option name="closed" value="true" />
@@ -245,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705399175219</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="maven项目">
+      <option name="closed" value="true" />
+      <created>1706597223472</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706597223472</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,19 +303,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <MESSAGE value="maven项目" />
     <option name="LAST_COMMIT_MESSAGE" value="maven项目" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/Result.jsp</url>
-          <line>55</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="this.config" language="JAVA" />
