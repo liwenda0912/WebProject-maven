@@ -19,17 +19,25 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
   .buttom_show{
-    padding-left: 140px;
+    padding-left: 120px;
   }
   button:active{
     background-color: cadetblue;
     box-shadow: 0 0 10px cadetblue;
     transform: translateY(4px);
   }
+  .bottom_register{
+    margin: 0;
+    padding-left: 136px;
+  }
 </style>
 <body>
-<div id="APP_input">
+<div id="APP_input" >
   <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
   <div id="input-name" >
       <el-form-item label="UserName:" prop="input">
@@ -45,12 +53,15 @@
     </el-form-item>
   </div>
   <div class="buttom_login">
-    <el-form-item class="buttom_show">
-      <el-button type="primary"  @click="submit('ruleForm')">登录</el-button>
-<%--      <button  ">Button</button>--%>
+    <el-form-item class="buttom_show" style="margin: 0">
+      <el-button type="primary"  @click="submit('ruleForm')" >登录</el-button>
+    <%--      <button  ">Button</button>--%>
     </el-form-item>
   </div>
   </el-form>
+</div>
+<div id="app-2" class="bottom_register">
+  <el-button type="text" @click="register()">注 册</el-button>
 </div>
 </body>
 <script src="./js/input.js" type="module"></script>

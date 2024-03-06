@@ -1,5 +1,4 @@
 let username =JSON.parse(localStorage.getItem("name"))
-let code =JSON.parse(localStorage.getItem("stataCode"))
 
 window.addEventListener("message",function(e){
     if(e.data==='1'){
@@ -7,6 +6,8 @@ window.addEventListener("message",function(e){
         // console.log(e.data); // message
     }
 }, false);
+
+
 var login = new Vue({
     data: {
         receive_name:'',
@@ -14,7 +15,8 @@ var login = new Vue({
         // isshow: true,
         // ishow: false,
         name_show: username,
-        stateCode:0
+        stateCode:0,
+
     },
     el: '#app',
     methods: {
@@ -35,7 +37,6 @@ var login = new Vue({
 
     },watch:{
         stateCode: function (newData,oldData){
-
             let self=this
             let name=JSON.parse(localStorage.getItem("username"));
             let input_passwd = JSON.parse(localStorage.getItem("passwd"));
@@ -62,6 +63,64 @@ var login = new Vue({
         }
     }
 
+});
+window.addEventListener("message",function(e){
+    if(e.data==='2'){
+        test.$data.dialogCode= e.data;
+        console.log(e.data); // message
+    }
+}, false);
+
+var test = new Vue({
+    data() {
+        return {
+            dialogFormVisible: false,
+            dialogCode:0,
+            form: {
+                name: '',
+                passwd:'',
+                region: '',
+                date1: '',
+                date2: '',
+                delivery: false,
+                type: [],
+                resource: '',
+                desc: ''
+            },
+            formLabelWidth: '120px'
+        };
+    },
+    el: '#app-1',
+    watch: {
+        dialogCode: function (newData, oldData) {
+            let self=this
+            if (newData==='2'){
+                self.$data.dialogFormVisible=true
+            }else{
+                self.$data.dialogFormVisible=false
+            }
+        }
+    },
+    methods: {
+        registered: function () {
+            let self=this
+            window.top.postMessage("0", '*');
+            self.$data.dialogFormVisible = false;
+            this.$message({
+                message: '55555',
+                center: true
+            });
+        },
+        quit(){
+            let self=this
+            window.top.postMessage("0", '*');
+            self.$data.dialogFormVisible=false;
+            this.$message({
+                message: '55555',
+                center: true
+            });
+        }
+    }
 });
 
 

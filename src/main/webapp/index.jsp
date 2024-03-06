@@ -49,7 +49,7 @@
               <div v-else>
                   {{name_show}}
                   <form method="post" action="LoginServlet">
-                      <iframe src="login_input.jsp" scrolling="no" height="250px" width="350px" style="border: 0">
+                      <iframe src="login_input.jsp" scrolling="no" height="320px" width="350px" style="border: 0">
                       </iframe>
                   </form>
               </div>
@@ -57,12 +57,26 @@
         </div>
         <div id="show-msg">
             <%@include file="pubilc/uploadFile.jsp"%>
-
-
 <%--            <iframe src="pubilc/uploadFile.jsp" scrolling="no" height="260px" width="800px" style="border: 0"></iframe>--%>
         </div>
     </div>
-
+    <div id="app-1">
+        <!-- Form -->
+        <el-dialog title="注册" :visible.sync="dialogFormVisible" style="text-align: center">
+            <el-form :model="form">
+                <el-form-item label="账号" :label-width="formLabelWidth" >
+                    <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="密码" :label-width="formLabelWidth" >
+                    <el-input v-model="form.passwd" autocomplete="off"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="registered()">注册</el-button>
+                <el-button type="primary" @click="quit()">取消</el-button>
+            </div>
+        </el-dialog>
+    </div>
     <div id="black">
     </div>
     <div class="bottom">

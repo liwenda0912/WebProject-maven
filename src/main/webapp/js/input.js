@@ -1,9 +1,21 @@
 
 var Min = new Vue({
     el: '#APP_input',
-
     data() {
         return {
+            dialogTableVisible: false,
+            dialogFormVisible: false,
+            form: {
+                name: '',
+                region: '',
+                date1: '',
+                date2: '',
+                delivery: false,
+                type: [],
+                resource: '',
+                desc: ''
+            },
+            formLabelWidth: '120px',
             ruleForm: {
                 input: '',
                 input_passwd: '',
@@ -34,14 +46,24 @@ var Min = new Vue({
                     window.parent.postMessage("0", '*');
                     console.log('error submit!!');
                     return false;
-
                 }
             });
-
         },
         render(createElement){
             localStorage.setItem("stataCode",0);
             localStorage.setItem("stataCode1",0);
         }
+    }
+})
+var register = new Vue({
+    el:"#app-2",
+    methods: {
+        register(){
+            window.top.postMessage("2", '*');
+            this.$message({
+                message: '55555',
+                center: true
+            });
+        },
     }
 })
