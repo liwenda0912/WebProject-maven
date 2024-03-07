@@ -65,9 +65,13 @@ var login = new Vue({
 
 });
 window.addEventListener("message",function(e){
+    console.log(e.data); // message
+    let self =this
     if(e.data==='2'){
         test.$data.dialogCode= e.data;
-        console.log(e.data); // message
+    }
+    else if (e.data==='0'){
+        test.$data.dialogCode= e.data;
     }
 }, false);
 
@@ -77,8 +81,8 @@ var test = new Vue({
             dialogFormVisible: false,
             dialogCode:0,
             form: {
-                name: '',
-                passwd:'',
+                user_name: '',
+                register_passwd: '',
                 region: '',
                 date1: '',
                 date2: '',
@@ -106,6 +110,19 @@ var test = new Vue({
             let self=this
             window.top.postMessage("0", '*');
             self.$data.dialogFormVisible = false;
+            axios({
+                method: 'Post',
+                url: 'RegisterServlet',
+                params: {
+                    username:self.form.user_name,
+                    passwd:self.form.register_passwd
+                }
+            }).then(res=>{
+                var data = res.data;
+                console.log(res.data+"   "+data.notice);
+            },err=>{
+                console.log(err);
+            });
             this.$message({
                 message: '55555',
                 center: true

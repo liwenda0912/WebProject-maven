@@ -3,19 +3,6 @@ var Min = new Vue({
     el: '#APP_input',
     data() {
         return {
-            dialogTableVisible: false,
-            dialogFormVisible: false,
-            form: {
-                name: '',
-                region: '',
-                date1: '',
-                date2: '',
-                delivery: false,
-                type: [],
-                resource: '',
-                desc: ''
-            },
-            formLabelWidth: '120px',
             ruleForm: {
                 input: '',
                 input_passwd: '',
