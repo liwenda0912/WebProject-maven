@@ -1,5 +1,7 @@
 package servlet;
 
+import uilts.sqlConnect;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -17,28 +19,37 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String UserName_register = request.getParameter("username");
         String Passwd = request.getParameter("passwd");
-        if(UserName_register.isEmpty()){
-            String data= "{\"notice\":\"0\",\"message\":\"账号为空\"}";
-            response.setContentType("application/json");
-            response.getWriter().write(data);
-        }else {
-            if (Objects.equals(UserName_register, "1")) {
-                if (!Objects.equals(Passwd, "12345678")) {
-                    String data= "{\"notice\":\"2\",\"name\":12}";
-                    response.setContentType("application/json");
-                    response.getWriter().write(data);
-                } else {
-                    // 设置session中的值
-                    String data= "{\"notice\":\"1\",\"name\":12}";
-                    response.setContentType("application/json");
-                    response.getWriter().write(data);
-
-                }
-            } else {
-                String data= "{\"notice\":\"2\"}";
-                response.setContentType("application/json");
-                response.getWriter().write(data);
-            }
+        sqlConnect sql =new sqlConnect();
+        try {
+            sql.getCon();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
+        try {
+            if(UserName_register.isEmpty()){
+                String data= "{\"notice\":\"0\",\"message_register\":\"账号为空\"}";
+                response.setContentType("application/json;charset=UTF-8");
+                response.getWriter().write(data);
+            }else {
+                    if (Passwd.isEmpty()) {
+                        String data= "{\"notice\":\"3\",\"message_register\":\"密码为空！\"}";
+                        response.setContentType("application/json;charset=UTF-8");
+                        response.getWriter().write(data);
+                    } else {
+                        // 设置session中的值
+                        try {
+                            sql.getCreate(UserName_register,Passwd);
+                            String data= "{\"notice\":\"1\",\"message_register\":\"注册成功\"}";
+                            response.setContentType("application/json;charset=UTF-8");
+                            response.getWriter().write(data);
+                        } catch (ClassNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

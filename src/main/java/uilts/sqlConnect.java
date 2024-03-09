@@ -1,18 +1,59 @@
 package uilts;
 import java.sql.*;
 public class sqlConnect {
+    String driver = "com.mysql.cj.jdbc.Driver";
+    String user = "root";
+    String url = "jdbc:mysql://localhost:3306/testRunningdata";
+    String DBPasswd = "123456";
     public void getCon() throws ClassNotFoundException {
-        String driver = "com.mysql.cj.jdbc.Driver";
         Class.forName(driver);
-        Connection con = null;
+        Connection conn = null;
         try {
-            String user = "root";
-            String url = "jdbc:mysql://localhost:3306";
-            String passwd = "123456";
-            con = DriverManager.getConnection(url, user, passwd);
+            conn = DriverManager.getConnection(url, user,DBPasswd);
+            Statement stmt = conn.createStatement();
+            String sql ="CREATE TABLE IF NOT EXISTS users (" +
+                    "id INT AUTO_INCREMENT PRIMARY KEY, " +
+                    "username VARCHAR(50) NOT NULL, " +
+                    "password VARCHAR(50) NOT NULL) ";
+            stmt.executeUpdate(sql);
+            conn.close();
+            stmt.close();
         } catch (SQLException e) {
             System.out.print("链接失败，状态:" + e.getErrorCode()+"\n");
             e.printStackTrace();
         }
+    }
+    public <username, passwd> void getCreate(String username ,String passwd) throws ClassNotFoundException{
+        Class.forName(driver);
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, user, DBPasswd);
+            stmt=conn.createStatement();
+            String sql ="insert into users(username,password) values ('"+username+"','"+passwd+"');";
+            System.out.print(sql);
+            stmt.executeUpdate(sql);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.print("链接失败，状态:" + e.getErrorCode()+"\n");
+            e.printStackTrace();
+        }
+    }
+    public ResultSet getSelect() throws ClassNotFoundException {
+        Class.forName(driver);
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet data = null;
+        try {
+            conn = DriverManager.getConnection(url, user, DBPasswd);
+            stmt = conn.createStatement();
+            String sql = "select * from testrunningdata.users;";
+            data = stmt.executeQuery(sql);
+        } catch (SQLException e) {
+            System.out.print("链接失败，状态:" + e.getErrorCode() + "\n");
+            e.printStackTrace();
+        }
+        return data;
     }
 }

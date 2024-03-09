@@ -44,12 +44,12 @@
            <div id ="app">
                <div v-if="name_show==1" id="app_relogin">
                    <p>{{name_show}}</p>
-                   <button type="button" v-on:click="login_down()">退出登录</button>
+                   <el-button type="primary" @click="login_down()">退出登录</el-button>
                </div>
               <div v-else>
                   {{name_show}}
                   <form method="post" action="LoginServlet">
-                      <iframe src="login_input.jsp" scrolling="no" height="320px" width="350px" style="border: 0">
+                      <iframe src="login_input.jsp" scrolling="no" height="320px" width="350px" style="border: 0;margin: 5px">
                       </iframe>
                   </form>
               </div>
@@ -62,13 +62,13 @@
     </div>
     <div id="app-1">
         <!-- Form -->
-        <el-dialog title="注册" :visible.sync="dialogFormVisible" style="text-align: center">
+        <el-dialog title="注册" :visible.sync="dialogFormVisible" style="text-align: center" :show-close="false" :center="true">
             <el-form :model="form">
                 <el-form-item label="账号" :label-width="formLabelWidth" >
-                    <el-input v-model="form.name" autocomplete="off"></el-input>
+                    <el-input v-model="form.user_name" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" :label-width="formLabelWidth" >
-                    <el-input v-model="form.passwd" autocomplete="off"></el-input>
+                    <el-input v-model="form.register_passwd" autocomplete="off"></el-input>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">

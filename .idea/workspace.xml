@@ -9,14 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="注册页面渲染">
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3744a8c1-ab51-4144-b349-1cabeb330464.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uilts/sqlConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uilts/sqlConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Result.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/result.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/result.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,9 +239,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JavaScript Debug.test.jsp" />
         <item itemvalue="JavaScript Debug.login_input.jsp" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Node.js.input.js" />
         <item itemvalue="JavaScript Debug.uploadFile.jsp" />
       </list>
@@ -267,7 +274,8 @@
       <workItem from="1708594800056" duration="3384000" />
       <workItem from="1708752797419" duration="33561000" />
       <workItem from="1709627879125" duration="23049000" />
-      <workItem from="1709774703482" duration="4802000" />
+      <workItem from="1709774703482" duration="37208000" />
+      <workItem from="1709962913113" duration="6381000" />
     </task>
     <task id="LOCAL-00002" summary="maven项目">
       <option name="closed" value="true" />
@@ -301,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709720740962</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="注册页面渲染-20240307">
+      <option name="closed" value="true" />
+      <created>1709791425963</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709791425963</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,9 +338,18 @@
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <MESSAGE value="maven项目" />
     <MESSAGE value="注册页面渲染" />
-    <option name="LAST_COMMIT_MESSAGE" value="注册页面渲染" />
+    <MESSAGE value="注册页面渲染-20240307" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册页面渲染-20240307" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="this.config" language="JAVA" />

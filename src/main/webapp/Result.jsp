@@ -14,18 +14,17 @@
 </head>
 <body>
 <div id="app">
-  <el-result icon="error" title="输入的账号密码错误！请重新输入" subTitle="输入的账号密码错误！请重新输入" v-if="obj==error">
+  <el-result icon="error" :title="message_1" subTitle="失败" v-if="obj==error">
     <template slot="extra">
       <el-button type="primary" size="medium" @click="change_show()">返回</el-button>
     </template>
   </el-result>
-
-  <el-result icon="success" title="登录成功" subTitle="登录成功！" v-else-if="obj==success">
+  <el-result icon="success" :title="message_1" subTitle="成功" v-else-if="obj==success">
     <template slot="extra">
       <el-button type="primary" size="medium" @click="change_show()">返回</el-button>
     </template>
   </el-result>
-  <el-result icon="alert" title="信息提示" subTitle="请根据提示进行操作!" v-else="obj==alert">
+  <el-result icon="alert" :title="message_1" subTitle="消息提示" v-else="obj==alert">
     <template slot="extra">
       <el-button type="primary" size="medium" @click="change_show()">返回</el-button>
     </template>
@@ -40,14 +39,16 @@
   let search = window.location.search;
   let urlParams = new URLSearchParams(search);
   let obj = JSON.parse(urlParams.get('data'));
-  // console.log(obj)
+  let obj_message_login = urlParams.get('message');
+  console.log("状态码："+obj,"这是信息："+obj_message_login)
   new Vue({
     el: '#app',
     data: {
       success:1,
       error:2,
       alert:0,
-      obj:obj
+      obj:obj,
+      message_1:obj_message_login
     },
     methods: {
       change_show(){
@@ -56,6 +57,9 @@
           localStorage.setItem("name",JSON.stringify(obj))
           console.log(JSON.parse(localStorage.getItem("name")))
         }
+      },
+      render:{
+        document
       }
     }
   })

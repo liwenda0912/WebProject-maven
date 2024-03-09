@@ -52,8 +52,8 @@ var login = new Vue({
                     }
                 }).then(res=>{
                     var data = res.data;
-                    console.log(res.data+"   "+data.notice);
-                    window.location.href=("Result.jsp?data="+data.notice)
+                    console.log(res.data+"   "+data.notice+data.message_login);
+                    window.location.href=("Result.jsp?data="+data.notice+"&message="+data.message_login)
                 },err=>{
                     console.log(err);
                 });
@@ -109,7 +109,6 @@ var test = new Vue({
         registered: function () {
             let self=this
             window.top.postMessage("0", '*');
-            self.$data.dialogFormVisible = false;
             axios({
                 method: 'Post',
                 url: 'RegisterServlet',
@@ -119,21 +118,26 @@ var test = new Vue({
                 }
             }).then(res=>{
                 var data = res.data;
+                console.log(data)
+                console.log(self.form.user_name+self.form.register_passwd+data.message_register)
                 console.log(res.data+"   "+data.notice);
+                if (data.notice==='1'){
+                    this.$message({
+                        message: data.message_register,
+                        center: true
+                    });
+                }
             },err=>{
                 console.log(err);
             });
-            this.$message({
-                message: '55555',
-                center: true
-            });
+            self.$data.dialogFormVisible = false;
         },
         quit(){
             let self=this
             window.top.postMessage("0", '*');
             self.$data.dialogFormVisible=false;
             this.$message({
-                message: '55555',
+                message: '取消注册成功！',
                 center: true
             });
         }
