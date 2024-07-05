@@ -9,39 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uilts/readExcelUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/head_new.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/userMessage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index_import.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/head_new.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/indexpageshow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/uploadFile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/head_new.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/tab_table.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/table.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/userMessage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uilts/sqlConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uilts/sqlConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Result.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Result.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bottom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/bottom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/data.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/data.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pubilc/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/head.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pubilc/uploadFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/uploadFile.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +88,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "project.propCompiler",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -327,7 +295,7 @@
       <workItem from="1720071659020" duration="159000" />
       <workItem from="1720072023777" duration="7000" />
       <workItem from="1720072043290" duration="918000" />
-      <workItem from="1720072988199" duration="27522000" />
+      <workItem from="1720072988199" duration="29674000" />
     </task>
     <task id="LOCAL-00002" summary="maven项目">
       <option name="closed" value="true" />
@@ -377,7 +345,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709970905785</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="平台优化：注册，交互js和导航栏">
+      <option name="closed" value="true" />
+      <created>1720165010408</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720165010408</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,7 +375,8 @@
     <MESSAGE value="maven项目" />
     <MESSAGE value="注册页面渲染" />
     <MESSAGE value="注册页面渲染-20240307" />
-    <option name="LAST_COMMIT_MESSAGE" value="注册页面渲染-20240307" />
+    <MESSAGE value="平台优化：注册，交互js和导航栏" />
+    <option name="LAST_COMMIT_MESSAGE" value="平台优化：注册，交互js和导航栏" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
