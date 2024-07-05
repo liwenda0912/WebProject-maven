@@ -24,13 +24,15 @@ var Min = new Vue({
         submit(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
+                    console.log("运行到现在")
                     localStorage.setItem("username",this.ruleForm.input)
                     localStorage.setItem("passwd",this.ruleForm.input_passwd)
-                    window.top.postMessage("1", '*');
+                    window.top.postMessage("login", '*');
                 } else {
+                    console.log(this.ruleForm)
                     localStorage.removeItem("username");
                     localStorage.removeItem("passwd");
-                    window.parent.postMessage("0", '*');
+                    window.parent.postMessage("LoginError", '*');
                     console.log('error submit!!');
                     return false;
                 }
@@ -42,11 +44,12 @@ var Min = new Vue({
         }
     }
 })
+// 注册监听
 var register = new Vue({
     el:"#app-2",
     methods: {
         register(){
-            window.top.postMessage("2", '*');
+            window.top.postMessage("register", '*');
             this.$message({
                 message: '55555',
                 center: true

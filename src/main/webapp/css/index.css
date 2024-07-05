@@ -6,18 +6,12 @@
     margin: auto;
     background-color: whitesmoke;
     width: 1243px;
-    border: 1px solid white;
-    box-shadow: 0 0 10px grey;
+
 }
 
 .header{
-    display: block;
-    margin: auto;
-    height:100px ;
     padding-bottom: 40px;
-    padding-left: 15px;
-    /*position: absolute;*/
-
+    height: 60px;
 }
 .border-bar{
     height: 300px;
@@ -89,12 +83,13 @@ input {
 }
 #black{
     display: block;
-    margin-top: 20px;
-    width: 1242px;
+    width: 1203px;
     height: 30px;
     background-color: white;
-    border:2px solid white;
+    border: 2px solid white;
     box-shadow: 0 0 10px grey;
+    margin: 20px 20px;
+    border-radius: 10px;
 }
 a{
     text-decoration: white;

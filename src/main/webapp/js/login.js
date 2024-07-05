@@ -1,24 +1,37 @@
 let username =JSON.parse(localStorage.getItem("name"))
-
+// 监听indexPageshow.js父页面的通讯
 window.addEventListener("message",function(e){
-    if(e.data==='1'){
+    console.log(e.data)
+    if(e.data===1){
         login.$data.stateCode = e.data;
-        // console.log(e.data); // message
+        console.log(e.data); // message
     }
+    else if(e.data===2){
+        test.$data.dialogCode= e.data;
+        console.log("申请注册"+e.data); // message
+
+    }
+    else if (e.data===3){
+        test.$data.dialogCode= e.data;
+        console.log("取消注册"+e.data); // message
+    }
+    else if (e.data===4){
+        test.$data.dialogCode= e.data;
+        console.log("取消注册"+e.data); // message
+    }
+
 }, false);
 
 
+//登录请求服务js
 var login = new Vue({
     data: {
         receive_name:'',
         receive_img:'',
-        // isshow: true,
-        // ishow: false,
         name_show: username,
         stateCode:0,
-
     },
-    el: '#app',
+    el: '#app_login',
     methods: {
         login_down() {
             localStorage.removeItem("name");
@@ -26,21 +39,20 @@ var login = new Vue({
                 message: '退出登录成功！',
                 center: true
             });
+
             setTimeout(() => {
                 location.reload();
-            }, 100)
+            }, 100);
         },
         test: function () {
             this.$router.push({path: '/Result'})
         }
-
-
     },watch:{
         stateCode: function (newData,oldData){
             let self=this
             let name=JSON.parse(localStorage.getItem("username"));
             let input_passwd = JSON.parse(localStorage.getItem("passwd"));
-            if (newData==='1'){
+            if (newData===1){
                 console.log(name);
                 console.log(input_passwd)
                 axios({
@@ -64,17 +76,20 @@ var login = new Vue({
     }
 
 });
-window.addEventListener("message",function(e){
-    console.log(e.data); // message
-    let self =this
-    if(e.data==='2'){
-        test.$data.dialogCode= e.data;
-    }
-    else if (e.data==='0'){
-        test.$data.dialogCode= e.data;
-    }
-}, false);
 
+// 获取input.js通讯的注册按钮点击状态
+// window.addEventListener("message",function(e){
+//     let self =this
+//     console.log(e.data)
+//     if(e.data==='2'){
+//         test.$data.dialogCode= e.data;
+//     }
+//     else if (e.data==='0'){
+//         test.$data.dialogCode= e.data;
+//     }
+// }, false);
+
+// 注册弹窗js
 var test = new Vue({
     data() {
         return {
@@ -98,7 +113,8 @@ var test = new Vue({
     watch: {
         dialogCode: function (newData, oldData) {
             let self=this
-            if (newData==='2'){
+            console.log("监听"+newData)
+            if (newData===2){
                 self.$data.dialogFormVisible=true
             }else{
                 self.$data.dialogFormVisible=false
@@ -108,7 +124,7 @@ var test = new Vue({
     methods: {
         registered: function () {
             let self=this
-            window.top.postMessage("0", '*');
+            window.top.postMessage("resetState", '*');
             axios({
                 method: 'Post',
                 url: 'RegisterServlet',
@@ -124,25 +140,31 @@ var test = new Vue({
                 if (data.notice==='1'){
                     this.$message({
                         message: data.message_register,
-                        center: true
+                        center: true,
                     });
                 }
             },err=>{
                 console.log(err);
             });
             self.$data.dialogFormVisible = false;
+            this.$refs.passwd.clear();
+            this.$refs.user.clear();
+            // window.removeEventListener('message',window.addEventListener);
+
         },
         quit(){
             let self=this
-            window.top.postMessage("0", '*');
+            window.top.postMessage("quit", '*')
             self.$data.dialogFormVisible=false;
             this.$message({
                 message: '取消注册成功！',
                 center: true
             });
-        }
+            // window.removeEventListener('message',window.addEventListener);
+        },
+
+
     }
 });
-
 
 

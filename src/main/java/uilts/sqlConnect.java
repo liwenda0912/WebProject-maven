@@ -40,7 +40,7 @@ public class sqlConnect {
             e.printStackTrace();
         }
     }
-    public ResultSet getSelect() throws ClassNotFoundException {
+    public ResultSet getSelect(String dbname) throws ClassNotFoundException {
         Class.forName(driver);
         Connection conn = null;
         Statement stmt = null;
@@ -48,12 +48,44 @@ public class sqlConnect {
         try {
             conn = DriverManager.getConnection(url, user, DBPasswd);
             stmt = conn.createStatement();
-            String sql = "select * from testrunningdata.users;";
+            String sql = "select * from "+dbname+";";
             data = stmt.executeQuery(sql);
         } catch (SQLException e) {
             System.out.print("链接失败，状态:" + e.getErrorCode() + "\n");
             e.printStackTrace();
         }
         return data;
+    }
+    public <username, passwd,dbname> void getUpData(String username ,String passwd,String dbname) throws ClassNotFoundException{
+        Class.forName(driver);
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, user, DBPasswd);
+            stmt=conn.createStatement();
+            String sql ="updata "+dbname+" set password="+passwd+" where username="+username+";";
+            stmt.executeUpdate(sql);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.print("链接失败，状态:" + e.getErrorCode()+"\n");
+            e.printStackTrace();
+        }
+    }
+    public <username, passwd> void getDeleteData(String username ,String passwd,String dbname) throws ClassNotFoundException{
+        Class.forName(driver);
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            conn = DriverManager.getConnection(url, user, DBPasswd);
+            stmt=conn.createStatement();
+            String sql ="DELETE FROM "+dbname+" WHERE username="+username+";";
+            stmt.executeUpdate(sql);
+            conn.close();
+            stmt.close();
+        } catch (SQLException e) {
+            System.out.print("链接失败，状态:" + e.getErrorCode()+"\n");
+            e.printStackTrace();
+        }
     }
 }

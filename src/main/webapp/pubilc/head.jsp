@@ -50,7 +50,7 @@
                 <span>数据</span>
             </a>
             <ul class="ul-2">
-                <li class="li-2"><a href="data.jsp">记录</a></li>
+                <li class="li-2"><a href="data.jsp?testData=true&userMessageShow=false">记录</a></li>
                 <li class="li-2"><a href="pubilc/uploadFile.jsp">数据</a></li>
             </ul>
         </li>
@@ -60,7 +60,7 @@
                 <span>设置</span>
             </a>
             <ul class="ul-2">
-                <li class="li-2"><a href="members_set.jsp">成员</a></li>
+                <li class="li-2"><a href="data.jsp?userMessageShow=true&testData=false">成员</a></li>
                 <li class="li-2"><a href="members_set.jsp">密码</a></li>
             </ul>
         </li>

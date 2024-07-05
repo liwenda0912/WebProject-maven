@@ -52,15 +52,12 @@
     },
     methods: {
       change_show(){
-        window.location.href="index.jsp";
+        window.location.href="index_import.jsp";
         if (obj===this.success){
           localStorage.setItem("name",JSON.stringify(obj))
           console.log(JSON.parse(localStorage.getItem("name")))
         }
       },
-      render:{
-        document
-      }
     }
   })
 </script>

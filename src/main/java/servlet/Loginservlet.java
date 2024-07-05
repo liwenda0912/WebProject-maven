@@ -34,13 +34,15 @@ public class LoginServlet extends HttpServlet {
                 response.getWriter().write(message);
         }else {
             try {
-                ResultSet data =  sql.getSelect();//调用sqlConnect的getSelect方法
+                String dbname = "testrunningdata.users";
+                ResultSet data =  sql.getSelect(dbname);//调用sqlConnect的getSelect方法
                 while (data.next()){
                     if (Objects.equals(UserName, data.getString("username"))) {
                         if (Objects.equals(Passwd, data.getString("password"))) {
                             // 设置session中的值
                             message= "{\"notice\":\"1\",\"message_login\":\"登录成功\"}";
                             response.getWriter().write(message);//写入信息进入响应报文
+                            System.out.print("登录成功");
                             node =String.valueOf('1');
                             break;
                         }else{

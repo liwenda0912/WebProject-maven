@@ -3,13 +3,7 @@
     padding: 0;
     margin: 0;
 }
-.tab-content {
-    float: left;
-    width: 1210px;
-    height: 500px;
-    background-color: white;
-    margin-left: 15px;
-}
+
 
 /* 显示当前活动的tab内容 */
 .active {
@@ -21,14 +15,18 @@
     margin: auto;
     background-color: whitesmoke;
     width: 1243px;
-    height: 1000px;
-    box-shadow: 0 0 10px grey;
+    height: auto;
+    box-shadow: 0 0 10px whitesmoke;
 }
 .bottom_show{
     display: block;
 }
 .body_table{
+    margin: 20px 20px;
+    box-shadow: 0 0 5px grey;
+    border:2px solid ghostwhite;
     height: 650px;
+    border-radius: 10px;
 }
 
 button{
@@ -44,22 +42,23 @@ button:hover{
     font-size: x-large;
 }
 .body-button{
-    height: 60px;
-    width: 1260px;
-    padding-left: 15px;
+    height: 650px;
+    width: 100%;
+    margin: 0;
+
 
 }
 .tab-content{
     float: left;
-    width: 1210px;
+    width: 100%;
     height: 500px;
     background-color: white;
 }
-.head-data{
-    padding-left: 15px;
-    margin: 0;
-    width: 1260px;
-}
+/*.head-data{*/
+/*    padding-left: 15px;*/
+/*    margin: 0;*/
+/*    width: 1260px;*/
+/*}*/
 table{
     margin: auto;
     padding:0;
@@ -81,4 +80,7 @@ tfoot{
 
 .table-style{
  margin-top: 10px;
+}
+.table-message{
+    margin: auto;
 }
