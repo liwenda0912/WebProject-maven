@@ -89,22 +89,32 @@ var login = new Vue({
 //     }
 // }, false);
 
+
 // 注册弹窗js
 var test = new Vue({
+
     data() {
         return {
             dialogFormVisible: false,
             dialogCode:0,
-            form: {
+            ruleForm: {
                 user_name: '',
                 register_passwd: '',
                 region: '',
-                date1: '',
-                date2: '',
+
                 delivery: false,
                 type: [],
                 resource: '',
                 desc: ''
+            },
+            rules:{
+                user_name: [
+                    {required: true, message: '账户不能为空', trigger: 'blur'},
+                ],
+                register_passwd: [
+                    {required: true, message: '密码不能为空', trigger: 'blur'},
+                    {min: 8, max: 16, message: '密码长度为8到16位！', trigger: 'blur'}
+                ]
             },
             formLabelWidth: '120px'
         };
@@ -122,34 +132,62 @@ var test = new Vue({
         }
     },
     methods: {
-        registered: function () {
-            let self=this
-            window.top.postMessage("resetState", '*');
-            axios({
-                method: 'Post',
-                url: 'RegisterServlet',
-                params: {
-                    username:self.form.user_name,
-                    passwd:self.form.register_passwd
-                }
-            }).then(res=>{
-                var data = res.data;
-                console.log(data)
-                console.log(self.form.user_name+self.form.register_passwd+data.message_register)
-                console.log(res.data+"   "+data.notice);
-                if (data.notice==='1'){
-                    this.$message({
-                        message: data.message_register,
-                        center: true,
+        registered(formName){
+            this.$refs[formName].validate((valid) => {
+                if ((valid)){
+                    let self=this
+                    window.top.postMessage("resetState", '*');
+                    axios({
+                        method: 'Post',
+                        url: 'RegisterServlet',
+                        params: {
+                            username:self.ruleForm.user_name,
+                            passwd:self.ruleForm.register_passwd
+                        }
+                    }).then(res=>{
+                        var data = res.data;
+                        console.log(data)
+                        console.log(self.ruleForm.user_name+self.ruleForm.register_passwd+data.message_register)
+                        console.log(res.data+"   "+data.notice);
+                        switch(data.notice){
+                            case "1":
+                                this.$message({
+                                    message: data.message_register,
+                                    center: true,
+                                    type:"success"
+                                });
+                                break
+                            case "0":
+                                this.$message({
+                                    message: data.message_register,
+                                    center: true,
+                                    type:'error'
+                                });
+                                break
+                            case "3":
+                                this.$message({
+                                    message: data.message_register,
+                                    center: true,
+                                    type:'error'
+                                });
+                                break
+                        }
+                    },err=>{
+                        console.log(err);
                     });
+                    self.$data.dialogFormVisible = false;
+                    this.$refs.passwd.clear();
+                    this.$refs.user.clear();
+                    // window.removeEventListener('message',window.addEventListener);
+                }else {
+                    this.$refs.passwd.clear();
+                    this.$refs.user.clear();
+                    // console.log(this.ruleForm)
+                    console.log('error submit!!');
+                    return false;
                 }
-            },err=>{
-                console.log(err);
-            });
-            self.$data.dialogFormVisible = false;
-            this.$refs.passwd.clear();
-            this.$refs.user.clear();
-            // window.removeEventListener('message',window.addEventListener);
+            })
+
 
         },
         quit(){

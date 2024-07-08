@@ -24,8 +24,7 @@
     margin: 0;
   }
   .buttom_show{
-    padding-left: 120px;
-  }
+    text-align: center;  }
   button:active{
     background-color: cadetblue;
     box-shadow: 0 0 10px cadetblue;
@@ -33,7 +32,10 @@
   }
   .bottom_register{
     margin: 0;
-    padding-left: 136px;
+    text-align: center;
+    }
+  .register_bottom{
+    width: 69px;
   }
 </style>
 <body>
@@ -52,7 +54,7 @@
       <%--                              </label>--%>
     </el-form-item>
   </div>
-  <div class="buttom_login">
+  <div class="buttom_login_1">
     <el-form-item class="buttom_show" style="margin: 0">
       <el-button type="primary"  @click="submit('ruleForm')" >登录</el-button>
     <%--      <button  ">Button</button>--%>
@@ -61,7 +63,7 @@
   </el-form>
 </div>
 <div id="app-2" class="bottom_register">
-  <el-button type="text" @click="register()">注 册</el-button>
+  <el-button type="text" @click="register()" class="register_bottom">注 册</el-button>
 </div>
 </body>
 <script src="./js/input.js" type="module"></script>

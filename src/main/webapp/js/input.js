@@ -50,10 +50,10 @@ var register = new Vue({
     methods: {
         register(){
             window.top.postMessage("register", '*');
-            this.$message({
-                message: '55555',
-                center: true
-            });
+            // this.$message({
+            //     message: '55555',
+            //     center: true
+            // });
         },
     }
 })

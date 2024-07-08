@@ -27,12 +27,12 @@ public class RegisterServlet extends HttpServlet {
         }
         try {
             if(UserName_register.isEmpty()){
-                String data= "{\"notice\":\"0\",\"message_register\":\"账号为空\"}";
+                String data= "{\"notice\":\"0\",\"message_register\":\"注册账号为空\"}";
                 response.setContentType("application/json;charset=UTF-8");
                 response.getWriter().write(data);
             }else {
                     if (Passwd.isEmpty()) {
-                        String data= "{\"notice\":\"3\",\"message_register\":\"密码为空！\"}";
+                        String data= "{\"notice\":\"3\",\"message_register\":\"注册账号密码为空！\"}";
                         response.setContentType("application/json;charset=UTF-8");
                         response.getWriter().write(data);
                     } else {

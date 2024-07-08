@@ -57,9 +57,9 @@
   },
   methods: {
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-      localStorage.setItem("key",key)
-      localStorage.setItem("keyPath",keyPath)
+      // console.log(key, keyPath)
+      //     console.log(key)
+          window.top.postMessage(key, '*');
     }
   }
 })</script>

@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="css/index.css">
+
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <html>
 <head>
@@ -24,8 +25,10 @@
 <div class="border-msg-2">
     <div id="input-msg" >
         <div id ="app_login">
-            <div v-if="name_show==1" id="app_relogin" style="margin: auto">
-                <el-avatar style="height: 80px;width: 80px;line-height: 5"> {{name_show}} </el-avatar>
+            <div v-if="name_show==1" id="app_relogin" style="margin-top: 60px;
+   text-align: center;
+    height: 50%;">
+                <el-avatar style="height: 80px;width: 80px;line-height: 80px"> {{name_show}} </el-avatar>
                 <p>欢迎用户{{name_show}}登录！</p>
                 <el-button type="primary" @click="login_down()">退出登录</el-button>
             </div>
@@ -45,20 +48,20 @@
 <div id="app-1">
     <!-- Form -->
     <el-dialog title="注册" :visible.sync="dialogFormVisible" style="text-align: center" :show-close="false" :center="true">
-        <el-form :model="form">
-            <el-form-item label="账号" :label-width="formLabelWidth" prop="input" >
-                <el-input v-model="form.user_name" autocomplete="off" clearable ref="user"></el-input>
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
+            <el-form-item label="账号:" :label-width="formLabelWidth" prop="user_name" >
+                <el-input v-model="ruleForm.user_name" autocomplete="off" clearable ref="user"></el-input>
             </el-form-item>
-            <el-form-item label="密码" :label-width="formLabelWidth" prop="input_passwd">
-                <el-input v-model="form.register_passwd" autocomplete="off" clearable   show-password ref="passwd"></el-input>
+            <el-form-item label="密码:" :label-width="formLabelWidth" prop="register_passwd">
+                <el-input v-model="ruleForm.register_passwd" autocomplete="off" clearable   show-password ref="passwd"></el-input>
             </el-form-item>
+            <div  class="dialog-footer" style="text-align: center">
+                <el-form-item>
+                    <el-button type="primary" @click="registered('ruleForm')">注册</el-button>
+                    <el-button type="primary" @click="quit()">取消</el-button>
+                </el-form-item>
+            </div>
         </el-form>
-        <div slot="footer" class="dialog-footer">
-            <el-button-group>
-            <el-button type="primary" @click="registered()">注册</el-button>
-            <el-button type="primary" @click="quit()">取消</el-button>
-            </el-button-group>
-        </div>
     </el-dialog>
 </div>
 <div id="black">

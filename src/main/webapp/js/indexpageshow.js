@@ -1,9 +1,3 @@
-// let code_key=JSON.parse(localStorage.getItem("key"));
-// let code_keyPath = JSON.parse(localStorage.getItem("keyPath"));
-// console.log(code_key)
-// if( code_key === "2-4-1"){
-//     APPLE.index_show="test_data"
-//  }
 
 
 // 回显对应的导航页面处理
@@ -11,14 +5,65 @@ var APPLE = new Vue({
     el:'#index_app',
     data() {
         return {
-        index_show:"index",
+            index_show:true,
+            index_code:0,
+            test_data:false,
+            userMessage:false
      }
     },
     methods:{
         created:function(){
            let self = this
             self.$data.index_show="index"
-        },
+        }
+    },
+    watch:{
+        index_code:function (newData,oldData) {
+            let self = this
+            console.log(typeof newData)
+            switch (newData.toString()) {
+                case "1":
+                    self.$data.index_show=true
+                    self.$data.test_data=false
+                    break
+                case "2-1":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "2-2":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "2-3":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "2-4-1":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "2-4-2":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "2-4-3":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "2-4-4":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "3":
+                    self.$data.index_show=false
+                    self.$data.test_data=true
+                    break
+                case "4":self.$data.index_show=false
+                    self.$data.userMessage=true
+                    break
+            }
+        }
+
     }
 
 })
@@ -43,8 +88,9 @@ window.addEventListener("message",function(e){
         case "resetState":
             frame.contentWindow.postMessage(4,'http://localhost:8086/mavenproject_war_exploded');
             break;
-        // default:
-        //     frame.window.removeEventListener('message',lf,false);
+        default:
+            APPLE.index_code=e.data
+            console.log(e.data)
     }
 
     // if(e.data==='login'){
