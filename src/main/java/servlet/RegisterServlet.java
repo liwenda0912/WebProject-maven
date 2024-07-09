@@ -1,12 +1,11 @@
 package servlet;
 
-import uilts.sqlConnect;
+import Utils.sqlConnect;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.Objects;
 
 @WebServlet(name = "RegisterServlet", value = "/RegisterServlet")
 public class RegisterServlet extends HttpServlet {

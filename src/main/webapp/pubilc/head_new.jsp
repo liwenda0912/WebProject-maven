@@ -56,6 +56,7 @@
     };
   },
   methods: {
+    //进行导航传参
     handleSelect(key, keyPath) {
       // console.log(key, keyPath)
       //     console.log(key)

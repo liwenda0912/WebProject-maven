@@ -41,14 +41,14 @@
 <body>
 <div id="APP_input" >
   <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
-  <div id="input-name" >
+  <div id="input-name"  >
       <el-form-item label="UserName:" prop="input">
-        <el-input placeholder="请输入账号" v-model="ruleForm.input" clearable name="username" ></el-input>
+        <el-input placeholder="请输入账号" v-model="ruleForm.input" clearable name="username" class="input_shadow"></el-input>
       </el-form-item>
   </div>
   <div id="input-passwd">
     <el-form-item label="PassWord:" prop="input_passwd">
-      <el-input placeholder="请输入密码" v-model="ruleForm.input_passwd" show-password name="passwd"></el-input>
+      <el-input placeholder="请输入密码" v-model="ruleForm.input_passwd" show-password name="passwd" class="input_shadow"></el-input>
       <%--                              <label>--%>
       <%--                                  <input type="password" placeholder="请输入密码" name="passwd">--%>
       <%--                              </label>--%>
@@ -56,7 +56,7 @@
   </div>
   <div class="buttom_login_1">
     <el-form-item class="buttom_show" style="margin: 0">
-      <el-button type="primary"  @click="submit('ruleForm')" >登录</el-button>
+      <el-button type="primary"  @click="submit('ruleForm')" class="input_shadow" >登录</el-button>
     <%--      <button  ">Button</button>--%>
     </el-form-item>
   </div>

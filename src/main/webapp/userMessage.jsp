@@ -62,82 +62,122 @@
                             label="操作"
                             width="100">
                         <template slot-scope="scope">
-                            <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                            <el-button type="text" size="small">编辑</el-button>
+                            <div class="cell_button">
+                                <el-button @click="handleClick(scope.row)" type="text" size="small" icon="el-icon-search">查看</el-button>
+                                <el-button type="text" size="small" icon="el-icon-edit" @click="edit(scope.row)">编辑</el-button>
+                            </div>
                         </template>
                     </el-table-column>
                 </el-table>
             </el-tab-pane>
         </el-tabs>
-<%--        <sql:setDataSource var="snapshot" driver="com.mysql.cj.jdbc.Driver"--%>
-<%--                           url="jdbc:mysql://localhost:3306/testRunningdata"--%>
-<%--                           user="root"  password="123456"/>--%>
-<%--        <sql:query dataSource="${snapshot}" var="result">--%>
-<%--            SELECT * from users;--%>
-<%--        </sql:query>--%>
-<%--        <table>--%>
-<%--            <thead>--%>
-<%--            <tr>--%>
-<%--                <th><div class="tr-th-name">id</div></th>--%>
-<%--                <th><div class="tr-th-name">用户名</div></th>--%>
-<%--                <th><div class="tr-th-name">密码</div></th>--%>
-<%--                <th><div class="tr-th-name">操作</div></th>--%>
-<%--            </tr>--%>
-<%--            </thead>--%>
-<%--            <tbody>--%>
-<%--            <c:forEach var="row" items="${result.rows}">--%>
-<%--                <tr>--%>
-<%--                    <td><c:out value="${row.id}"/></td>--%>
-<%--                    <td><c:out value="${row.username}"/></td>--%>
-<%--                    <td><c:out value="${row.password}"/></td>--%>
-<%--                    <td><a href="">修改密码</a></td>--%>
-<%--                </tr>--%>
-<%--            </c:forEach>--%>
-<%--            </tbody>--%>
-<%--            <tfoot>--%>
-<%--            <tr>--%>
-<%--                <td>total</td>--%>
-<%--            </tr>--%>
-<%--            </tfoot>--%>
-<%--        </table>--%>
+        <!-- dialog-->
+        <el-dialog title="用户信息" :visible.sync="dialogFormVisible" >
+            <div style="font-size: 15px;margin: 5px 5px" >
+                <p>姓名：{{type.name}}</p>
+                <p>地址：{{type.address}}</p>
+                <p>日期：{{type.date}}</p>
+                <p>邮编：{{type.zip}}</p>
+                <p>省份：{{type.province}}</p>
+                <p>城市：{{type.city}}</p>
+            </div>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogFormVisible = false">取 消</el-button>
+                <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+            </div>
+        </el-dialog>
+        <el-dialog title="修改用户信息" :visible.sync="dialogVisible">
+                <el-form :model="form">
+                    <el-form-item label="姓名：" :label-width="formLabelWidth">
+                        <el-input v-model="type.name" autocomplete="off" :disabled="true"></el-input>
+                    </el-form-item>
+                    <el-form-item label="地址：" :label-width="formLabelWidth">
+                        <el-input v-model="type.address" autocomplete="off"></el-input>
+                    </el-form-item>
+                    <el-form-item label="日期：" :label-width="formLabelWidth">
+                        <el-input v-model="type.date" autocomplete="off" :disabled="true"></el-input>
+                    </el-form-item>
+                    <el-form-item label="邮编：" :label-width="formLabelWidth">
+                        <el-input v-model="type.zip" autocomplete="off"></el-input>
+                    </el-form-item>
+                    <el-form-item label="省份：" :label-width="formLabelWidth">
+                        <el-select v-model="type.province" placeholder="请选择活动区域">
+                            <el-option label="区域一" value="shanghai"></el-option>
+                            <el-option label="区域二" value="beijing"></el-option>
+                        </el-select>
+                    </el-form-item>
+                    <el-form-item label="城市：" :label-width="formLabelWidth">
+                        <el-input v-model="type.city" autocomplete="off"></el-input>
+                    </el-form-item>
+                </el-form>
+                <div slot="footer" class="dialog-footer">
+                    <el-button @click="dialogFormVisible = false">取 消</el-button>
+                    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+                </div>
+        </el-dialog>
     </div>
 </div>
+<style>
+    div.cell_button{
+        width:200px;
+        margin:0;
+
+    }
+    .el-button+.el-button{
+        margin-left: 0;
+    }
+
+</style>
 <script >
     var User = {
         methods: {
             handleClick(row) {
+                let self = this
                 console.log(row);
+                self.$data.type=row;
+                this.dialogFormVisible=true;
+            },
+            edit(row){
+                let self = this
+                console.log(row);
+                self.$data.type=row;
+                this.dialogVisible=true;
             }
         },
         data() {
             return {
+                dialogVisible: false,
+                dialogFormVisible: false,
+                delivery: false,
+                type:[],
+                formLabelWidth: '120px',
                 tableData: [{
                     date: '2016-05-02',
                     name: '王小虎',
                     province: '上海',
                     city: '普陀区',
-                    address: '上海市普陀区金沙江路 1518 弄',
+                    address: '上海市普陀区金沙江路 1518 号',
                     zip: 200333
                 }, {
                     date: '2016-05-04',
-                    name: '王小虎',
+                    name: 'xiaolong',
                     province: '上海',
                     city: '普陀区',
-                    address: '上海市普陀区金沙江路 1517 弄',
+                    address: '上海市普陀区金沙江路 1517 号',
                     zip: 200333
                 }, {
                     date: '2016-05-01',
-                    name: '王小虎',
+                    name: 'fuxiang',
                     province: '上海',
                     city: '普陀区',
-                    address: '上海市普陀区金沙江路 1519 弄',
+                    address: '上海市普陀区金沙江路 1519 号',
                     zip: 200333
                 }, {
                     date: '2016-05-03',
-                    name: '王小虎',
+                    name: 'liwenda',
                     province: '上海',
                     city: '普陀区',
-                    address: '上海市普陀区金沙江路 1516 弄',
+                    address: '上海市普陀区金沙江路 1516 号',
                     zip: 200333
                 }]
             }

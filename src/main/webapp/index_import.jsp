@@ -71,6 +71,9 @@
     .border-bar{
         margin-top: 10px;
     }
+    .dialog-footer button{
+        box-shadow: 0 0 8px grey;
+    }
 </style>
 </body>
 </html>

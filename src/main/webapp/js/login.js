@@ -39,7 +39,6 @@ var login = new Vue({
                 message: '退出登录成功！',
                 center: true
             });
-
             setTimeout(() => {
                 location.reload();
             }, 100);
@@ -64,8 +63,8 @@ var login = new Vue({
                     }
                 }).then(res=>{
                     var data = res.data;
-                    console.log(res.data+"   "+data.notice+data.message_login);
-                    window.location.href=("Result.jsp?data="+data.notice+"&message="+data.message_login)
+                    console.log(res.data+"   "+data.code+data.message);
+                    window.location.href=("Result.jsp?data="+data.code+"&message="+data.message)
                 },err=>{
                     console.log(err);
                 });

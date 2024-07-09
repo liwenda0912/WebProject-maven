@@ -1,5 +1,5 @@
 <%--        <%@ page import="java.util.Objects" %>--%>
-<%--        <%@ page import="Bean.User" %>&lt;%&ndash;--%>
+<%--        <%@ page import="entity.User" %>&lt;%&ndash;--%>
 <%--
   Created by IntelliJ IDEA.
   User: lwd

@@ -17,6 +17,7 @@ var APPLE = new Vue({
             self.$data.index_show="index"
         }
     },
+    // 监听导航栏的跳转
     watch:{
         index_code:function (newData,oldData) {
             let self = this
@@ -67,7 +68,7 @@ var APPLE = new Vue({
     }
 
 })
-// 监听input.js子子页面传递的通讯
+// 监听子页面传递的通讯
 window.addEventListener("message",function(e){
     var frame = document.getElementById('index_iframe');
     //给iframe的id为index_iframe的子页面进行通信传参
@@ -88,25 +89,9 @@ window.addEventListener("message",function(e){
         case "resetState":
             frame.contentWindow.postMessage(4,'http://localhost:8086/mavenproject_war_exploded');
             break;
+        //监听导航栏的传参
         default:
             APPLE.index_code=e.data
             console.log(e.data)
     }
-
-    // if(e.data==='login'){
-    //     // var my_frame = document.getElementById('index_iframe');
-    //     frame.contentWindow.postMessage(1,'http://localhost:8086/mavenproject_war_exploded');
-    // }
-    // else if (e.data==="LoginError")  {
-    //     // var frame_index = document.getElementById('index_iframe');
-    //     frame.contentWindow.postMessage(0,'http://localhost:8086/mavenproject_war_exploded');
-    // } else if (e.data==="register")  {
-    //     // var frame_register = document.getElementById('index_iframe');
-    //     frame.contentWindow.postMessage(2,'http://localhost:8086/mavenproject_war_exploded');
-    // }else if(e.data==="quit"){
-    //     // var frame_register = document.getElementById('index_iframe');
-    //     frame.contentWindow.postMessage(3,'http://localhost:8086/mavenproject_war_exploded');
-    // }else if (e.data==="resetState"){
-    //     frame.contentWindow.postMessage(4,'http://localhost:8086/mavenproject_war_exploded');
-    // }
     }, false);

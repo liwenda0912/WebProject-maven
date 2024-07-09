@@ -1,4 +1,4 @@
-package Bean;
+package entity;
 
 public class User {
     private String username;
@@ -8,6 +8,7 @@ public class User {
     }
 
     public User(String username , String passwd) {
+        super();
         this.passwd=passwd;
         this.username = username;
     }
@@ -24,5 +25,15 @@ public class User {
         this.passwd = passwd;
     }
 
+    @Override
+    public String toString() {
+        return "Tb_population [name=" + username + ", passwd=" + passwd + "]";
+    }
 
+
+    public User() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 }
+

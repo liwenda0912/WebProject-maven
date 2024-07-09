@@ -1,5 +1,5 @@
 <%--package servlet;--%>
-<%--import uilts.sqlConnect;--%>
+<%--import Utils.sqlConnect;--%>
 
 <%--import javax.servlet.*;--%>
 <%--import javax.servlet.http.*;--%>
