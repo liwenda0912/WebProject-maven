@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <link rel="stylesheet" type="text/css" href="css/index.css">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <html>
 <head>
@@ -41,7 +41,9 @@
         </div>
     </div>
     <div id="show-msg">
-        <%@include file="pubilc/uploadFile.jsp"%>
+        <form action="UploadServlet">
+            <%@include file="pubilc/uploadFile.jsp"%>
+        </form>
         <%--            <iframe src="pubilc/uploadFile.jsp" scrolling="no" height="260px" width="800px" style="border: 0"></iframe>--%>
     </div>
 </div>

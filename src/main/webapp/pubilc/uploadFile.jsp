@@ -14,27 +14,74 @@
     <title>uploadFile</title>
 </head>
 <body>
-<%--<form method="post" action="UploadServlet" enctype="multipart/form-data">--%>
-<%--  选择一个文件:--%>
-<%--  <input type="file" name="uploadFile" />--%>
-<%--  <br/><br/>--%>
-<%--  <input type="submit" value="上传" />--%>
-<%--</form>--%>
 <div id="app_uploadFile" style="display: flex;align-items: center;height: 271px;width: 360px">
-    <el-upload
-            class="upload-demo"
-            drag
-            action="https://cors-anywhere.herokuapp.com/https://jsonplaceholder.typicode.com/posts/"
-            multiple>
+    <el-upload ref = "load" class="upload-demo" drag action='??'
+            multiple
+            action=""
+            :on-success="handleSuccess"
+            :http-request="upload"
+               accept=".xls"
+               :limit="1"
+               >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+        <div class="el-upload__tip" slot="tip">只能上传excel文件</div>
     </el-upload>
 </div>
 </body>
 <script>
-    new Vue().$mount('#app_uploadFile')
+    new Vue({
+        el:"#app_uploadFile",
+        methods:{
+            handleSuccess(rep, file,fileList){
+                console.log(rep)
+            },
+            upload(file){
+                    const File = file.file;
+                    let formData1 = new FormData();
+                    formData1.append("file", File);
+                axios({
+                    method: 'post',
+                    url: 'UploadServlet',
+                    data:formData1,
+                    headers:{
+                        'content-type':'multipart/form-data'
+                    }
+                }).then(res=>{
+                    var data = res.data;
+                    if (data.code==="200"){
+                        var name = document.getElementsByClassName("el-upload-list__item-status-label");
+                        for (var i =0;i<name.length;i++){
+                            name[i].style.display="block";
+                            name[i].style.paddingTop="7px";
+                        };
+                        this.$message({
+                            message:data.message,
+                            center:true,
+                            type:"success"
+                        })
+                    }else if(data.code==="404"){
+                        this.$message({
+                            message: data.message,
+                            center: true,
+                            type:"error"
+                        });
+                        this.$refs['load'].clearFiles()
+                    }
+                },err=>{
+                    alert("系统错误");
+                    console.log("");
+                    this.$message({
+                        message: "系统错误",
+                        center: true,
+                        type:"error"
+                    });
+                });
+            }
 
+
+        }
+    })
 </script>
 <style>
     div .upload-demo{
@@ -43,13 +90,13 @@
     #app_uploadFile{
         margin: auto;
     }
-    ul.el-upload-list.el-upload-list--text li a {
-        height: 24px;
-        display: block;
-    }
     ul.el-upload-list.el-upload-list--text li a i{
         height: 20px;
     }
+    li.el-upload-list__item.is-ready:hover label.el-upload-list__item-status-label{
+        display: none !important;
+    }
+
 
 </style>
 </html>

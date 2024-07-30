@@ -24,7 +24,7 @@
 </head>
 <body>
 <div class="body-tab" id="app_Data">
-    <div class="body_table" v-if="testDataShow">
+    <div class="body_table">
          <iframe src="tab_table.jsp"  scrolling="no" style="border: 0;border-radius: 10px;" class="body-button"></iframe>
 <%--        <div class="body-button">--%>
 <%--            <button class="tab active"  onclick="tab(event,'tab1')">成功</button>--%>
@@ -138,18 +138,6 @@
 </div>
 </body>
 <script>
-    let search = window.location.search;
-    let urlParams = new URLSearchParams(search);
-    let obj_testData = JSON.parse(urlParams.get('testData'));
-    let obj_userMessageShow = urlParams.get('userMessageShow');
-    var data_show = new Vue({
-        el: '#app_Data',
-        data(){
-            return{
-                userMessageShow:obj_userMessageShow,
-                testDataShow:obj_testData,
-            }
-        }
-    })
+
 </script>
 </html>

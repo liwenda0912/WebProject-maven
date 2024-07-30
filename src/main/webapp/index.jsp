@@ -36,7 +36,7 @@
          <iframe id="index_iframe" src="index_import.jsp" scrolling="no" style="border: 0;width: 100%;height: 100%"></iframe>
      </div>
      <div class="work_platform_data" v-else-if="test_data">
-        <iframe src="data.jsp?testData=true&userMessageShow=false" scrolling="no" style="border: 0;width: 100%;height: 100%"></iframe>
+        <iframe src="data.jsp" scrolling="no" style="border: 0;width: 100%;height: 100%"></iframe>
      </div>
      <div v-else-if="userMessage">
          <iframe  src="userMessage.jsp" scrolling="no" style="border: 0;width: 100%;height: 100%"></iframe>

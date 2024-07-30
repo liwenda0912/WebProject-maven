@@ -5,14 +5,18 @@ public enum Enum {
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
-        SUCCESS(0, "操作成功"),
-        ERROR(1, "操作失败"),
+//        SUCCESS(0, "操作成功"),
+//        ERROR(0, "操作失败"),
         ERROR_1(2,"账号密码错误"),
+        LOGIN_SUCCESS(1,"登录成功"),
+        USERNAME_UNDEFINED(0,"账号不存在"),
         SERVER_ERROR(500, "服务器异常"),
         MAIL_SEND_SUCCESS(10003, "邮件发送成功"),
         NEED_LOGIN(20001, "登录失效"),
         USERNAME_OR_PASSWORD_EMPTY(20002, "用户名或密码不能为空"),
         USERNAME_OR_PASSWORD_WRONG(20003, "用户名或密码错误");
+
+
 
         private Integer code;
         private String msg;

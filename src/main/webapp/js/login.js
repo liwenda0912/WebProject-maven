@@ -9,7 +9,6 @@ window.addEventListener("message",function(e){
     else if(e.data===2){
         test.$data.dialogCode= e.data;
         console.log("申请注册"+e.data); // message
-
     }
     else if (e.data===3){
         test.$data.dialogCode= e.data;
@@ -33,6 +32,7 @@ var login = new Vue({
     },
     el: '#app_login',
     methods: {
+        // 退出登录
         login_down() {
             localStorage.removeItem("name");
             this.$message({
@@ -47,13 +47,13 @@ var login = new Vue({
             this.$router.push({path: '/Result'})
         }
     },watch:{
+        // 监听stateCode状态
         stateCode: function (newData,oldData){
             let self=this
-            let name=JSON.parse(localStorage.getItem("username"));
-            let input_passwd = JSON.parse(localStorage.getItem("passwd"));
+            let name=localStorage.getItem("username");
+            let input_passwd = localStorage.getItem("passwd");
             if (newData===1){
-                console.log(name);
-                console.log(input_passwd)
+                // 向登录servlet请求登录申请
                 axios({
                     method: 'Post',
                     url: 'LoginServlet',
@@ -62,12 +62,14 @@ var login = new Vue({
                         passwd:input_passwd
                     }
                 }).then(res=>{
+                    //获取登录servlet的登录请求响应
                     var data = res.data;
                     console.log(res.data+"   "+data.code+data.message);
                     window.location.href=("Result.jsp?data="+data.code+"&message="+data.message)
                 },err=>{
                     console.log(err);
                 });
+                //清除登录获取的登录账号信息
                 localStorage.removeItem("username");
                 localStorage.removeItem("passwd");
             }
@@ -76,22 +78,10 @@ var login = new Vue({
 
 });
 
-// 获取input.js通讯的注册按钮点击状态
-// window.addEventListener("message",function(e){
-//     let self =this
-//     console.log(e.data)
-//     if(e.data==='2'){
-//         test.$data.dialogCode= e.data;
-//     }
-//     else if (e.data==='0'){
-//         test.$data.dialogCode= e.data;
-//     }
-// }, false);
 
 
 // 注册弹窗js
 var test = new Vue({
-
     data() {
         return {
             dialogFormVisible: false,
@@ -106,6 +96,7 @@ var test = new Vue({
                 resource: '',
                 desc: ''
             },
+            // 输入框校验规则
             rules:{
                 user_name: [
                     {required: true, message: '账户不能为空', trigger: 'blur'},
@@ -122,7 +113,6 @@ var test = new Vue({
     watch: {
         dialogCode: function (newData, oldData) {
             let self=this
-            console.log("监听"+newData)
             if (newData===2){
                 self.$data.dialogFormVisible=true
             }else{
@@ -132,10 +122,13 @@ var test = new Vue({
     },
     methods: {
         registered(formName){
+            // rules校验输入框
             this.$refs[formName].validate((valid) => {
                 if ((valid)){
                     let self=this
+                    //给父页面传数据
                     window.top.postMessage("resetState", '*');
+                    //调用servlet服务
                     axios({
                         method: 'Post',
                         url: 'RegisterServlet',
@@ -144,10 +137,8 @@ var test = new Vue({
                             passwd:self.ruleForm.register_passwd
                         }
                     }).then(res=>{
+                        //获取servlet响应的信息
                         var data = res.data;
-                        console.log(data)
-                        console.log(self.ruleForm.user_name+self.ruleForm.register_passwd+data.message_register)
-                        console.log(res.data+"   "+data.notice);
                         switch(data.notice){
                             case "1":
                                 this.$message({
@@ -174,30 +165,27 @@ var test = new Vue({
                     },err=>{
                         console.log(err);
                     });
+                    // 关闭注册界面并清除输入框
                     self.$data.dialogFormVisible = false;
                     this.$refs.passwd.clear();
                     this.$refs.user.clear();
-                    // window.removeEventListener('message',window.addEventListener);
                 }else {
+                    // 清除输入框
                     this.$refs.passwd.clear();
                     this.$refs.user.clear();
-                    // console.log(this.ruleForm)
-                    console.log('error submit!!');
                     return false;
                 }
             })
-
-
         },
         quit(){
             let self=this
+            // 给父页面通讯
             window.top.postMessage("quit", '*')
             self.$data.dialogFormVisible=false;
             this.$message({
                 message: '取消注册成功！',
                 center: true
             });
-            // window.removeEventListener('message',window.addEventListener);
         },
 
 

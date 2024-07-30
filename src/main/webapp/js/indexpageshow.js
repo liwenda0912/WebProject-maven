@@ -21,7 +21,6 @@ var APPLE = new Vue({
     watch:{
         index_code:function (newData,oldData) {
             let self = this
-            console.log(typeof newData)
             switch (newData.toString()) {
                 case "1":
                     self.$data.index_show=true
@@ -40,6 +39,7 @@ var APPLE = new Vue({
                     self.$data.test_data=true
                     break
                 case "2-4-1":
+                    self.$data.userMessage=false
                     self.$data.index_show=false
                     self.$data.test_data=true
                     break
@@ -59,7 +59,9 @@ var APPLE = new Vue({
                     self.$data.index_show=false
                     self.$data.test_data=true
                     break
-                case "4":self.$data.index_show=false
+                case "4":
+                    self.$data.index_show=false
+                    self.$data.test_data=false
                     self.$data.userMessage=true
                     break
             }

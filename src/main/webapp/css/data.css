@@ -24,9 +24,7 @@
 .body_table{
     margin: 20px 20px;
     box-shadow: 0 0 5px grey;
-    border:2px solid ghostwhite;
     height: 650px;
-    border-radius: 10px;
 }
 
 button{
@@ -42,7 +40,7 @@ button:hover{
     font-size: x-large;
 }
 .body-button{
-    height: 650px;
+    height: 680px;
     width: 100%;
     margin: 0;
 

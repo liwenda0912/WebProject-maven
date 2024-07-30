@@ -2,10 +2,27 @@ var Main = {
     methods: {
         handleClick(row) {
             console.log(row);
-        }
+
+        },
+        handleSizeChange(val) {
+            console.log(`每页 ${val} 条`);
+        },
+        handleCurrentChange(val) {
+            console.log(`当前页: ${val}`);
+        },
+        onshow() {
+            let self =this;
+            self.loading=true
+            setTimeout({
+            },5000)
+            self.loading=false
+        },
+
     },
     data() {
         return {
+            currentPage4:5,
+            loading:"",
             tableData: [{
                 date: '2016-05-02',
                 name: '王小虎',

@@ -11,6 +11,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page isELIgnored="false" %>
 <script src="//unpkg.com/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="//unpkg.com/element-ui@2.15.14/lib/index.js"></script>
 <link rel="stylesheet"  href="//unpkg.com/element-ui@2.15.14/lib/theme-chalk/index.css">
 <%--<link rel="stylesheet" type="text/css" href="css/userMessage.css">--%>
@@ -24,11 +25,12 @@
         <el-tabs type="border-card">
             <el-tab-pane label="用户管理">
                 <el-table
-                        :data="tableData"
+                        border
+                        v-loading="loading"
+                        :data="test"
                         style="width: 100%"
                         height="560px">
                     <el-table-column
-                            fixed
                             prop="date"
                             label="日期"
                             width="150">
@@ -65,10 +67,12 @@
                             <div class="cell_button">
                                 <el-button @click="handleClick(scope.row)" type="text" size="small" icon="el-icon-search">查看</el-button>
                                 <el-button type="text" size="small" icon="el-icon-edit" @click="edit(scope.row)">编辑</el-button>
+                                <el-button type="text" size="small" icon="el-icon-edit—pwd" @click="edit(scope.row)">修改密码</el-button>
                             </div>
                         </template>
                     </el-table-column>
                 </el-table>
+                <iframe id="iframe_pagination" src="http://localhost:8086/mavenproject_war_exploded/pagination.jsp" scrolling="no" style="width: 11960px;height:auto;border: 0"></iframe>
             </el-tab-pane>
         </el-tabs>
         <!-- dialog-->
@@ -121,70 +125,14 @@
     div.cell_button{
         width:200px;
         margin:0;
-
     }
     .el-button+.el-button{
         margin-left: 0;
     }
-
-</style>
-<script >
-    var User = {
-        methods: {
-            handleClick(row) {
-                let self = this
-                console.log(row);
-                self.$data.type=row;
-                this.dialogFormVisible=true;
-            },
-            edit(row){
-                let self = this
-                console.log(row);
-                self.$data.type=row;
-                this.dialogVisible=true;
-            }
-        },
-        data() {
-            return {
-                dialogVisible: false,
-                dialogFormVisible: false,
-                delivery: false,
-                type:[],
-                formLabelWidth: '120px',
-                tableData: [{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1518 号',
-                    zip: 200333
-                }, {
-                    date: '2016-05-04',
-                    name: 'xiaolong',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1517 号',
-                    zip: 200333
-                }, {
-                    date: '2016-05-01',
-                    name: 'fuxiang',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1519 号',
-                    zip: 200333
-                }, {
-                    date: '2016-05-03',
-                    name: 'liwenda',
-                    province: '上海',
-                    city: '普陀区',
-                    address: '上海市普陀区金沙江路 1516 号',
-                    zip: 200333
-                }]
-            }
-        }
+    .el-table--border th.el-table__cell{
+       background-color: #DDDDDD;
     }
-    var Ctor = Vue.extend(User)
-    new Ctor().$mount('#app_tabs')
-</script>
+</style>
+<script src="js/userMessage.js"></script>
 </body>
 </html>

@@ -15,6 +15,8 @@
     <el-tabs type="border-card">
         <el-tab-pane label="用户管理">
                 <el-table
+                        v-loading="loading"
+                        border
                         :data="tableData"
                         style="width: 100%"
                         height="560px">
@@ -58,6 +60,17 @@
                         </template>
                     </el-table-column>
                 </el-table>
+            <div class="block">
+                <el-pagination
+                        @size-change="handleSizeChange"
+                        @current-change="handleCurrentChange"
+                        :current-page="currentPage4"
+                        :page-sizes="[10, 15, 20]"
+                        :page-size="100"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="400">
+                </el-pagination>
+            </div>
         </el-tab-pane>
         <el-tab-pane label="配置管理">配置管理</el-tab-pane>
         <el-tab-pane label="角色管理">角色管理</el-tab-pane>

@@ -1,6 +1,7 @@
 package servlet;
 
 import Utils.sqlConnect;
+import service.sqlService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -18,12 +19,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String UserName_register = request.getParameter("username");
         String Passwd = request.getParameter("passwd");
-        sqlConnect sql =new sqlConnect();
-        try {
-            sql.getCon();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+        sqlService sql =new sqlService();
         try {
             if(UserName_register.isEmpty()){
                 String data= "{\"notice\":\"0\",\"message_register\":\"注册账号为空\"}";
@@ -36,15 +32,18 @@ public class RegisterServlet extends HttpServlet {
                         response.getWriter().write(data);
                     } else {
                         // 设置session中的值
-                        try {
-                            sql.getCreate(UserName_register,Passwd);
+                        int code = sql.addTbp(UserName_register,Passwd);
+                        if (code==0){
                             String data= "{\"notice\":\"1\",\"message_register\":\"注册成功\"}";
                             response.setContentType("application/json;charset=UTF-8");
                             response.getWriter().write(data);
-                        } catch (ClassNotFoundException e) {
-                            throw new RuntimeException(e);
+                        }else{
+                            String data= "{\"notice\":\"3\",\"message_register\":\"服务异常\"}";
+                            response.setContentType("application/json;charset=UTF-8");
+                            response.getWriter().write(data);
                         }
-                }
+
+                    }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

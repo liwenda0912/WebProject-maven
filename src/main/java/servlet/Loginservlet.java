@@ -27,25 +27,28 @@ public class LoginServlet extends HttpServlet {
 //        sqlConnect sql =new sqlConnect();//连接数据库，查询所有用户信息
         sqlService sqlService =new sqlService();
         String message;
+        Enum code;
         String node =null;
         response.setContentType("application/json;charset=UTF-8");//定义servlet返回信息的格式
         if(UserName.isEmpty()){
-            Enum code = Enum.USERNAME_OR_PASSWORD_WRONG;
+            code = Enum.USERNAME_OR_PASSWORD_WRONG;
             message = jsonTransform.jsonTranForm(code.getMsg(),code.getCode());
             response.getWriter().write(message);
         }else if(Passwd.isEmpty()){
-            Enum code = Enum.USERNAME_OR_PASSWORD_EMPTY;
+            code = Enum.USERNAME_OR_PASSWORD_EMPTY;
             message = jsonTransform.jsonTranForm(code.getMsg(),code.getCode());
             response.getWriter().write(message);
         }else {
             try {
                 String dbname = "testrunningdata.users";
-                ResultSet data =  sqlService.getSelect(dbname);//调用sqlConnect的getSelect方法
+
+                ResultSet data =  sqlService.getSelectLogin(dbname);//调用sqlConnect的getSelect方法
                 while (data.next()){
                     if (Objects.equals(UserName, data.getString("username"))) {
                         if (Objects.equals(Passwd, data.getString("password"))) {
                             // 设置session中的值
-                            message= "{\"code\":\"1\",\"message\":\"登录成功\"}";
+                            code = Enum.LOGIN_SUCCESS;
+                            message = jsonTransform.jsonTranForm(code.getMsg(),code.getCode());
                             response.getWriter().write(message);//写入信息进入响应报文
                             node =String.valueOf('1');
                             break;
@@ -63,12 +66,12 @@ public class LoginServlet extends HttpServlet {
          }
         if(Objects.equals(node, "2")){
 //            message= "{\"notice\":\"2\",\"message_login\":\"账号密码错误\"}";
-            Enum code = Enum.ERROR_1;
+            code = Enum.ERROR_1;
             message = jsonTransform.jsonTranForm(code.getMsg(),code.getCode());
-            System.out.print(message);
             response.getWriter().write(message);
         } else if (Objects.equals(node, "0")) {
-            message= "{\"code\":\"2\",\"message\":\"账号不存在\"}";
+            code = Enum.USERNAME_UNDEFINED;
+            message = jsonTransform.jsonTranForm(code.getMsg(),code.getCode());
             response.getWriter().write(message);
         }
     }
