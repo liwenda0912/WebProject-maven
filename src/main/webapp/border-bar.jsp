@@ -22,7 +22,6 @@
 </head>
 <body>
 <div id="container-bar"></div>
-
 </body>
 <script>
     var BarEChart = echarts.init(document.getElementById("container-bar"),'bar');
@@ -32,17 +31,17 @@
         },
         tooltip:{},
         xAxis:{
-            data: ["data","data","data","data"]
+            data: ["data","test","ll","msg",'lls','555']
         },
         yAxis:{
-            data:['1','2','3','4']
+            // data:[1,5,10,15,20]
         },
         series:[
             {
                 name:"柱形图",
                 type:"bar",
                 color:['rgb(58 160 255 / 91%)'],
-                data:["1","2","2","4"],
+                data:[1,8,3,4,30,50],
             }
         ]
     };

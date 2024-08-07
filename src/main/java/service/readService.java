@@ -1,5 +1,6 @@
 package service;
 
+import Dao.To_read;
 import Utils.jsonTransform;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -17,8 +18,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class readService {
-
+public class readService implements To_read {
+    @Override
     public String UploadFileUtils(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String message;
         sqlService sqlService =new sqlService();
@@ -43,7 +44,7 @@ public class readService {
                         }
                         // 获取excel表的表头
                         Sheet sheet = workbook.getSheetAt(0);
-                        // 进行倒入数据操作
+                        // 进行导入数据操作
                         int SQL_CODE=sqlService.readUpdata(readSheet(sheet));
                         workbook.close();
                         if (SQL_CODE!=0){
@@ -64,6 +65,7 @@ public class readService {
         }
        return message;
     }
+    @Override
     public JSONArray readSheet(Sheet sheet){
         JSONObject set = null;
         JSONArray array = new JSONArray();

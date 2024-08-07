@@ -15,12 +15,17 @@ var APPLE = new Vue({
         created:function(){
            let self = this
             self.$data.index_show="index"
+
         }
     },
     // 监听导航栏的跳转
     watch:{
         index_code:function (newData,oldData) {
             let self = this
+            var name = window.document.getElementsByClassName("border");
+            for (var i =0;i<name.length;i++) {
+                name[i].style.height = "100%";
+            }
             switch (newData.toString()) {
                 case "1":
                     self.$data.index_show=true
@@ -58,6 +63,7 @@ var APPLE = new Vue({
                 case "3":
                     self.$data.index_show=false
                     self.$data.test_data=true
+
                     break
                 case "4":
                     self.$data.index_show=false

@@ -15,16 +15,14 @@
     margin: auto;
     background-color: whitesmoke;
     width: 1243px;
-    height: auto;
+    height: 100%;
     box-shadow: 0 0 10px whitesmoke;
 }
 .bottom_show{
     display: block;
 }
 .body_table{
-    margin: 20px 20px;
-    box-shadow: 0 0 5px grey;
-    height: 650px;
+    height: 100%
 }
 
 button{
@@ -40,11 +38,9 @@ button:hover{
     font-size: x-large;
 }
 .body-button{
-    height: 680px;
+    height: 100%;
     width: 100%;
     margin: 0;
-
-
 }
 .tab-content{
     float: left;

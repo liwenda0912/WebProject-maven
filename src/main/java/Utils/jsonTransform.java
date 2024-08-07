@@ -17,7 +17,6 @@ public class jsonTransform {
         int columns = array_name.getLastCellNum();
         JSONObject jsonObj = new JSONObject();
         for (int i = 0 ;i<array_text.size();i++){
-//            System.out.print(array_name.getCell(i+1)+"\n");
             jsonObj.put(String.valueOf(array_name.getCell(i+1)), array_text.get(i));
         }
         return jsonObj;

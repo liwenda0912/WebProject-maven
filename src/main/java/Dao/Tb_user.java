@@ -1,9 +1,8 @@
 package Dao;
-import entity.User;
 import org.json.JSONArray;
 
 import java.sql.ResultSet;
-import java.util.List;
+import java.util.Map;
 
 public interface Tb_user {
 
@@ -17,7 +16,7 @@ public interface Tb_user {
 
     int addTbp(String username, String pwd);
 
-    int updateTbp(User user);
+    int updateTbp(String dbname, Map<String, String[]> params);
 
     int readUpdata(JSONArray array_text);
 }

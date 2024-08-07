@@ -21,7 +21,7 @@
             :on-success="handleSuccess"
             :http-request="upload"
                accept=".xls"
-               :limit="1"
+               :on-change=handleChange
                >
         <i class="el-icon-upload"></i>
         <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
@@ -33,11 +33,30 @@
     new Vue({
         el:"#app_uploadFile",
         methods:{
+            operations(type_message,data_message){
+                this.$message({
+                    message:data_message,
+                    center:true,
+                    type:type_message
+                });
+                if(type_message !== "success"){
+                    this.$refs['load'].clearFiles()
+                }
+            },
             handleSuccess(rep, file,fileList){
                 console.log(rep)
             },
+            handleChange(file,fileList){
+                this.ebsFileList = fileList;
+                this.ebsErrorImport = '';
+                if (fileList.length > 1) {
+                    fileList.splice(0, 1);
+                    // this.$message.error('只能上传一个文件');
+                }
+            },
             upload(file){
                     const File = file.file;
+                    console.log(file)
                     let formData1 = new FormData();
                     formData1.append("file", File);
                 axios({
@@ -49,25 +68,49 @@
                     }
                 }).then(res=>{
                     var data = res.data;
-                    if (data.code==="200"){
-                        var name = document.getElementsByClassName("el-upload-list__item-status-label");
-                        for (var i =0;i<name.length;i++){
-                            name[i].style.display="block";
-                            name[i].style.paddingTop="7px";
-                        };
-                        this.$message({
-                            message:data.message,
-                            center:true,
-                            type:"success"
-                        })
-                    }else if(data.code==="404"){
-                        this.$message({
-                            message: data.message,
-                            center: true,
-                            type:"error"
-                        });
-                        this.$refs['load'].clearFiles()
+                    switch (data.code){
+                        case "200":
+                            var name = document.getElementsByClassName("el-upload-list__item-status-label");
+                            for (var i =0;i<name.length;i++){
+                                name[i].style.display="block";
+                                name[i].style.paddingTop="7px";
+                            }
+                            this.operations("success",data.message);
+                            break;
+                        case "404":
+                            this.operations("error",data.message);
+                            break;
+                        case "501":
+                            this.operations("error",data.message);
+                            break;
                     }
+                    console.log(data)
+                    // if (data.code==="200"){
+                    //     var name = document.getElementsByClassName("el-upload-list__item-status-label");
+                    //     for (var i =0;i<name.length;i++){
+                    //         name[i].style.display="block";
+                    //         name[i].style.paddingTop="7px";
+                    //     };
+                    //     this.$message({
+                    //         message:data.message,
+                    //         center:true,
+                    //         type:"success"
+                    //     })
+                    // }else if(data.code==="404"){
+                    //     this.$message({
+                    //         message: data.message,
+                    //         center: true,
+                    //         type:"error"
+                    //     });
+                    //     this.$refs['load'].clearFiles()
+                    // }else if(data.code==="501"){
+                    //     this.$message({
+                    //         message: data.message,
+                    //         center: true,
+                    //         type:"error"
+                    //     });
+                    //     this.$refs['load'].clearFiles()
+                    // }
                 },err=>{
                     alert("系统错误");
                     console.log("");

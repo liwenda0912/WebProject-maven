@@ -41,7 +41,6 @@ public class LoginServlet extends HttpServlet {
         }else {
             try {
                 String dbname = "testrunningdata.users";
-
                 ResultSet data =  sqlService.getSelectLogin(dbname);//调用sqlConnect的getSelect方法
                 while (data.next()){
                     if (Objects.equals(UserName, data.getString("username"))) {

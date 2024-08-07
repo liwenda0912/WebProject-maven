@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="//unpkg.com/vue@2/dist/vue.js"></script>
+<script src="//unpkg.com/element-ui@2.15.14/lib/index.js"></script>
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -49,6 +51,7 @@
 </div>
 <div id="app-1">
     <!-- Form -->
+    <transition name="el-zoom-in-bottom">
     <el-dialog title="注册" :visible.sync="dialogFormVisible" style="text-align: center" :show-close="false" :center="true">
         <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
             <el-form-item label="账号:" :label-width="formLabelWidth" prop="user_name" >
@@ -65,6 +68,7 @@
             </div>
         </el-form>
     </el-dialog>
+    </transition>
 </div>
 <div id="black">
 </div>

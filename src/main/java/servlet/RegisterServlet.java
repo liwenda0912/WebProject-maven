@@ -42,7 +42,6 @@ public class RegisterServlet extends HttpServlet {
                             response.setContentType("application/json;charset=UTF-8");
                             response.getWriter().write(data);
                         }
-
                     }
             }
         } catch (IOException e) {

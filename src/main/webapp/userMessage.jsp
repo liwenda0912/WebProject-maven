@@ -24,6 +24,28 @@
     <div class="table-style" id="app_tabs">
         <el-tabs type="border-card">
             <el-tab-pane label="用户管理">
+                <el-collapse v-model="activeNames" @change="handleChange">
+                    <el-collapse-item title="搜索" name="1">
+                        <div class="demo-input-size">
+                            <el-date-picker
+                                    v-model="value3"
+                                    type="datetime"
+                                    placeholder="选择日期时间"
+                                    default-time="12:00:00">
+                            </el-date-picker>
+                            <el-input
+                                    placeholder="地址"
+                                    suffix-icon="el-icon-date"
+                                    v-model="input1">
+                            </el-input>
+                            <el-input
+                                    placeholder="用户名称"
+                                    suffix-icon="el-icon-date"
+                                    v-model="input2">
+                            </el-input>
+                        </div>
+                    </el-collapse-item>
+                </el-collapse>
                 <el-table
                         border
                         v-loading="loading"
@@ -62,7 +84,7 @@
                     </el-table-column>
                     <el-table-column
                             label="操作"
-                            width="100">
+                            width="300">
                         <template slot-scope="scope">
                             <div class="cell_button">
                                 <el-button @click="handleClick(scope.row)" type="text" size="small" icon="el-icon-search">查看</el-button>
@@ -72,7 +94,9 @@
                         </template>
                     </el-table-column>
                 </el-table>
-                <iframe id="iframe_pagination" src="http://localhost:8086/mavenproject_war_exploded/pagination.jsp" scrolling="no" style="width: 11960px;height:auto;border: 0"></iframe>
+                <div style="height: 60px;">
+                    <iframe id="iframe_pagination" src="http://localhost:8086/mavenproject_war_exploded/table/pagination.jsp" scrolling="no" style="width: 11960px;border: 0;position: fixed;height: 200px"></iframe>
+                </div>
             </el-tab-pane>
         </el-tabs>
         <!-- dialog-->
@@ -115,8 +139,8 @@
                     </el-form-item>
                 </el-form>
                 <div slot="footer" class="dialog-footer">
-                    <el-button @click="dialogFormVisible = false">取 消</el-button>
-                    <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+                    <el-button @click="dialogVisible = false">取 消</el-button>
+                    <el-button type="primary" @click="EditTable(type)">确 定</el-button>
                 </div>
         </el-dialog>
     </div>
@@ -132,6 +156,18 @@
     .el-table--border th.el-table__cell{
        background-color: #DDDDDD;
     }
+    .demo-input-size{
+        float: right;
+    }
+    .el-input.el-input--suffix{
+        width: 200px;
+    }
+    .el-input.el-input--medium.el-input--suffix{
+        width: 200px;
+    }
+   .el-collapse-item__content{
+       height: 30px;
+   }
 </style>
 <script src="js/userMessage.js"></script>
 </body>

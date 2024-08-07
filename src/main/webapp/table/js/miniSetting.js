@@ -1,4 +1,3 @@
-//监听iframe父页面传递的数据
 window.addEventListener("message",function(e) {
     console.log(e.data.split(":")[1])
     if(e.data.split(":")[0]==="page"){
@@ -13,7 +12,6 @@ var User =new Vue({
     el:"#app_tabs",
     data() {
         return {
-            //时间选择器的数据
             pickerOptions: {
                 shortcuts: [{
                     text: '今天',
@@ -58,54 +56,18 @@ var User =new Vue({
         this.onshow();
     },
     methods: {
-        //控制列表的页面样式的方法
-        handleChange(val) {
-            console.log(val);
-            if (val.length === 2){
-                var name = window.parent.document.getElementsByClassName("border");
-                for (var i =0;i<name.length;i++) {
-                    name[i].style.height = "110%";
-                }
-            } else{
-                var name = window.parent.document.getElementsByClassName("border");
-                for (var i =0;i<name.length;i++) {
-                    name[i].style.height = "100%";
-                }
-            }
-        },
-        //页面查看按钮的方法
-        handleClick(row) {
-            let self = this
-            console.log(row);
-            self.$data.type=row;
-            this.dialogFormVisible=true;
-        },
-        //页面编辑按钮的方法
-        edit(row){
-            let self = this
-            console.log(row);
-            self.$data.type=row;
-            this.dialogVisible=true;
-        },
-        // iframe的父传递信息给子页面传递数据的方法
-        send(data){
-            let frame_pagination= document.getElementById("iframe_pagination");
-            frame_pagination.contentWindow.postMessage(data,'http://localhost:8086/mavenproject_war_exploded/pagination.jsp');
-            frame_pagination.onload=function (){
-                frame_pagination.contentWindow.postMessage(data,'http://localhost:8086/mavenproject_war_exploded/pagination.jsp');
-                // frame_pagination.contentWindow.alert("jjjjdsf")
-            }
-        },
-        // 编辑保持方法
-        EditTable(type){
+        editButtom(type){
+            var  let = this
+            this.dialogVisible = false
+            console.log(type)
             axios({
                 method: 'Post',
-                url: 'DataServlet',
-                params: {
-                    dbname:"users",
-                },
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                url: 'http://localhost:8086/mavenproject_war_exploded/DataServlet',
+                params: {
+                    dbname:"setting",
                 },
                 data:type
             }).then(res=>{
@@ -122,24 +84,61 @@ var User =new Vue({
                 console.log(err);
             });
         },
-        //页面加载就获取数据
+        handleChange(val) {
+            console.log(val);
+            var name_id = window.parent.document.getElementsByClassName("app_tabs_");
+            var name = window.parent.document.getElementsByClassName("el-tabs el-tabs--top el-tabs--border-card");
+            if (val.length === 2){
+                console.log("asdada")
+                for (var i =0;i<name.length;i++) {
+                    name[i].style.height = "780px";
+                }
+                for (var i =0;i<name.length;i++) {
+                    name_id[i].style.margin = "20px 20px 60px 20px";
+                }
+            } else{
+                for (var i =0;i<name.length;i++) {
+                    name[i].style.height = "760px";
+                }
+            }
+        },
+        handleClick(row) {
+            let self = this
+            console.log(row);
+            self.$data.type=row;
+            this.dialogFormVisible=true;
+        },
+        edit(row){
+            let self = this
+            console.log(row);
+            self.$data.type=row;
+            this.dialogVisible=true;
+        },
+        send(data){
+            let frame_pagination= document.getElementById("iframe_pagination");
+            frame_pagination.contentWindow.postMessage(data,'http://localhost:8086/mavenproject_war_exploded/pagination.jsp');
+            frame_pagination.onload=function (){
+                frame_pagination.contentWindow.postMessage(data,'http://localhost:8086/mavenproject_war_exploded/pagination.jsp');
+                // frame_pagination.contentWindow.alert("jjjjdsf")
+            }
+        },
         onshow(){
             let self =this
             axios({
                 method: 'Get',
-                url: 'DataServlet',
+                url: 'http://localhost:8086/mavenproject_war_exploded/DataServlet',
                 params: {
-                    dbname:"users",
+                    dbname:"setting",
                     pageNum:self.$data.pageNum_1,
                     pageSize:self.$data.pageShowNum
                 }
             }).then(res=>{
                 //获取用户servlet的登录请求响应
-                 var data = res.data;
-                 this.send(data[data.length-1]);
-                 for (var i =0;i<data.length-1;i++){
-                     this.test.push(data[i]);
-                 }
+                var data = res.data;
+                this.send(data[data.length-1]);
+                for (var i =0;i<data.length-1;i++){
+                    this.test.push(data[i]);
+                }
                 setTimeout(() => {
                     this.loading=false;
                 }, 2000);
@@ -147,26 +146,18 @@ var User =new Vue({
                 console.log(err);
             });
         }
-    },
-    //监听函数
-    watch:{
-        //监听列表展示的数
+    },watch:{
         pageNum_1: function (newData,oldData){
-            console.log(newData)
             if(newData!==oldData){
                 this.loading=true
                 this.test=[];
                 this.onshow();
-                console.log("new num")
             }
         },
-        //监听列表页数
         pageShowNum:function (newData,oldData){
-            console.log(newData)
             if(newData!==oldData){
                 this.test=[];
                 this.onshow();
-                console.log("new pagenum")
             }
         }
     },

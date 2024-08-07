@@ -11,37 +11,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/uploadFileUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/CoordinateVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/readService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/userServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/pagination.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/userMessage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pagination.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/To_Json.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/To_read.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/jsonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/service/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/DataServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/DataUpdataServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/JDBC.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/table/js/miniSetting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/Tb_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/Tb_user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utils/jsonTransform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/jsonTransform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Enum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Enum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/readService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/readService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/sqlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/sqlService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/userServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/border-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/border-bar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bottom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/bottom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/data.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/head_new.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/head_new.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/data.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/data.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index_import.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index_import.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/indexpageshow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/indexpageshow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/tab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/tab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login_input.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login_input.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/members_set.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/members_set.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/js/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/userMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/userMessage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/pagination.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pubilc/uploadFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/uploadFile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/tab_table.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/tab_table.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/table.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/userMessage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userMessage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,11 +69,15 @@
         <option value="AnnotationType" />
         <option value="package.json" />
         <option value="CSS File" />
-        <option value="Interface" />
-        <option value="Class" />
-        <option value="servlet" />
         <option value="Jsp File" />
         <option value="JavaScript File" />
+        <option value="servlet" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="XML File " />
+        <option value="Resource Bundle" />
+        <option value="properties" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -111,39 +124,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;maven&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.18.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.1&quot;,
-    &quot;last_directory_selection&quot;: &quot;D:/Java/mavenproject/src/main/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/李文达/HelloWorld.Java-master/wechat/WeChat/out/production/WeChat/interfacetest&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.1.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "maven",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.nodejs.core.library.configured.version": "16.18.1",
+    "javascript.nodejs.core.library.typings.version": "16.18.1",
+    "last_directory_selection": "D:/Java/mavenproject/src/main/java",
+    "last_opened_file_path": "D:/李文达/HelloWorld.Java-master/wechat/WeChat/out/production/WeChat/interfacetest",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "spring.configuration.checksum": "47e0a6b9ab2ad5d0ed1ab0d00da97e08",
+    "ts.external.directory.path": "D:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.1.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlite&quot;,
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite",
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="service" />
@@ -157,16 +171,19 @@
       <recent name="D:\Java\mavenproject\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java\mavenproject\src\main\webapp" />
-      <recent name="D:\Java\mavenproject\src\main\webapp\js" />
-      <recent name="D:\Java\mavenproject\src\main\webapp\pubilc" />
+      <recent name="D:\Java\mavenproject\src\main\resources" />
+      <recent name="D:\Java\mavenproject\src\main\resources\application" />
+      <recent name="D:\Java\mavenproject\src\main\resources\mapper" />
+      <recent name="D:\Java\mavenproject\src\main\webapp\table\js" />
+      <recent name="D:\Java\mavenproject\src\main\webapp\table" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="Dao" />
       <recent name="Utils" />
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.51">
+  <component name="RunManager" selected="Application.test">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="mavenproject" />
@@ -187,10 +204,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="head_new.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/pubilc/head_new.jsp">
-      <method v="2" />
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
+      <module name="mavenproject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="login_input.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/login_input.jsp">
+    <configuration name="head_new.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/pubilc/head_new.jsp">
       <method v="2" />
     </configuration>
     <configuration name="test.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/test.jsp">
@@ -289,20 +310,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.test" />
       <item itemvalue="Application.sqlConnect" />
       <item itemvalue="Application.Main" />
       <item itemvalue="JavaScript Debug.head_new.jsp" />
-      <item itemvalue="JavaScript Debug.login_input.jsp" />
       <item itemvalue="JavaScript Debug.test.jsp" />
       <item itemvalue="Tomcat Server.Tomcat 8.0.51" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.sqlConnect" />
         <item itemvalue="JavaScript Debug.head_new.jsp" />
         <item itemvalue="JavaScript Debug.test.jsp" />
-        <item itemvalue="JavaScript Debug.login_input.jsp" />
       </list>
     </recent_temporary>
   </component>
@@ -362,7 +383,12 @@
       <workItem from="1720599645287" duration="3092000" />
       <workItem from="1720663489087" duration="64025000" />
       <workItem from="1721265011783" duration="69375000" />
-      <workItem from="1722246594431" duration="5014000" />
+      <workItem from="1722246594431" duration="39365000" />
+      <workItem from="1722761708918" duration="165000" />
+      <workItem from="1722761929483" duration="268000" />
+      <workItem from="1722762220221" duration="9218000" />
+      <workItem from="1722907143698" duration="32683000" />
+      <workItem from="1723015012696" duration="7652000" />
     </task>
     <task id="LOCAL-00002" summary="maven项目">
       <option name="closed" value="true" />
@@ -444,7 +470,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720520223247</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="updatafile完善功能">
+      <option name="closed" value="true" />
+      <created>1722306500682</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1722306500682</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +515,8 @@
     <MESSAGE value="平台优化：注册，交互js和导航栏" />
     <MESSAGE value="导航栏跳转和注册操作优化" />
     <MESSAGE value="工具层，entity层，服务层和dao层的编写" />
-    <option name="LAST_COMMIT_MESSAGE" value="工具层，entity层，服务层和dao层的编写" />
+    <MESSAGE value="updatafile完善功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="updatafile完善功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

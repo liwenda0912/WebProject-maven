@@ -1,17 +1,13 @@
 package service;
 import Dao.Tb_user;
-import com.alibaba.fastjson.JSON;
-import entity.User;
 import Utils.sqlConnect;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.json.JSONException;
-import org.json.JSONObject;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.sql.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static jdk.internal.org.objectweb.asm.Type.getType;
 
@@ -21,10 +17,12 @@ public class sqlService implements Tb_user {
     public ResultSet getSelectLogin(String dbname) throws ClassNotFoundException {
         ResultSet data = null;
         try {
+            //连接数据库
             Connection conn = sqlConnect.getConnection();
+            //创建statement
             Statement stmt = conn.createStatement();
+            //执行sql
             String sql = "select * from "+dbname+";";
-
             data = stmt.executeQuery(sql);
         } catch (SQLException e) {
             System.out.print("链接失败，状态:" + e.getErrorCode() + "\n");
@@ -37,8 +35,11 @@ public class sqlService implements Tb_user {
     public ResultSet getSelect(String dbname, Integer NUM, Integer pageNUM) throws ClassNotFoundException {
         ResultSet data = null;
         try {
+            //连接数据库
             Connection conn = sqlConnect.getConnection();
+            //创建statement
             Statement stmt = conn.createStatement();
+            //执行sql
             String sql = "select * from "+dbname+" LIMIT "+pageNUM+" OFFSET "+(NUM-1)*pageNUM+";";
             data = stmt.executeQuery(sql);
         } catch (SQLException e) {
@@ -53,12 +54,15 @@ public class sqlService implements Tb_user {
         ResultSet count_num;
         int Count_data =0;
         try {
+            //连接数据库
             Connection conn = sqlConnect.getConnection();
+            //创建statement
             Statement stmt = conn.createStatement();
-            String sql_count ="select count(username) from "+dbname+";";
+            //执行sql
+            String sql_count ="select count(*) from "+dbname+";";
             count_num = stmt.executeQuery(sql_count);
             while(count_num.next()){
-                Count_data = Integer.parseInt(count_num.getString("count(username)"));
+                Count_data = Integer.parseInt(count_num.getString("count(*)"));
             }
         } catch (SQLException e) {
             System.out.print("链接失败，状态:" + e.getErrorCode() + "\n");
@@ -74,7 +78,7 @@ public class sqlService implements Tb_user {
         try {
             //连接数据库
             conn= sqlConnect.getConnection();
-            //定义sql
+            //执行sql
             String sql="select * from users where id="+username;
             PreparedStatement pst=conn.prepareStatement(sql);
             int resultSet=pst.executeUpdate();
@@ -95,7 +99,7 @@ public class sqlService implements Tb_user {
         try {
             //连接数据库
             conn= sqlConnect.getConnection();
-            //定义sql
+            //执行sql
             String sql="insert into users(username,password,address,phone,alias) values(?,?,?,?,?)";
             PreparedStatement pst=conn.prepareStatement(sql);
             pst.setString(1,username);
@@ -114,19 +118,38 @@ public class sqlService implements Tb_user {
         return 0;
     }
     @Override
-    public int updateTbp(User user) {
+    public int updateTbp(String dbname, Map<String, String[]> params) {
         // TODO Auto-generated method stub
         Connection conn=null;
+        String id = null;
+        String edit_name = null;
         try {
             //连接数据库
             conn= sqlConnect.getConnection();
             //定义sql
-            String sql="update users set username=?,passwd=? where username=?";
-            PreparedStatement pst=conn.prepareStatement(sql);
-            pst.setString(1, user.getUsername());
-            pst.setString(2, user.getPasswd());
-            int resultSet=pst.executeUpdate();
-            return resultSet;
+            if(dbname.equals("setting")){
+                String setting_id = params.get("setting_id")[0];
+                System.out.print(params.keySet());
+                for (Map.Entry<String, String[]> entry : params.entrySet()) {
+                    //获取key
+                    String paramName = entry.getKey();
+                    //key是否为dbname
+                    if (!paramName.equals("dbname")){
+                        String[] paramValues = entry.getValue();
+                        for (String paramValue : paramValues) {
+                            // key是否为setting_id
+                            if(!paramName.equals("setting_id")){
+                                // 执行sql语句
+                                String sql="update "+dbname+" set "+paramName+"=? where "+"=?";
+                                PreparedStatement pst=conn.prepareStatement(sql);
+                                pst.setString(1,paramValue);
+                                pst.setString(2,setting_id);
+                                pst.executeUpdate();
+                            }
+                        }
+                    }
+                }
+            }
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -166,6 +189,7 @@ public class sqlService implements Tb_user {
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+            return 1;
         }finally {
             sqlConnect.close(conn);
         }

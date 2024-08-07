@@ -3,6 +3,7 @@ var Min = new Vue({
     el: '#APP_input',
     data() {
         return {
+            //输入框rules校验
             ruleForm: {
                 input: '',
                 input_passwd: '',
@@ -21,10 +22,10 @@ var Min = new Vue({
         }
     },
     methods: {
+        //登录方法
         submit(formName) {
             this.$refs[formName].validate((valid) => {
                 if (valid) {
-                    console.log("运行到现在")
                     localStorage.setItem("username",this.ruleForm.input)
                     localStorage.setItem("passwd",this.ruleForm.input_passwd)
                     window.top.postMessage("login", '*');
@@ -38,6 +39,7 @@ var Min = new Vue({
                 }
             });
         },
+        //渲染函数
         render(createElement){
             localStorage.setItem("stataCode",0);
             localStorage.setItem("stataCode1",0);
