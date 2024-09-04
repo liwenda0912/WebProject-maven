@@ -12,6 +12,7 @@
 <%@ page isELIgnored="false" %>
 <script src="//unpkg.com/vue@2/dist/vue.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script src="//unpkg.com/element-ui@2.15.14/lib/index.js"></script>
 <link rel="stylesheet"  href="//unpkg.com/element-ui@2.15.14/lib/theme-chalk/index.css">
 <%--<link rel="stylesheet" type="text/css" href="css/userMessage.css">--%>
@@ -52,15 +53,16 @@
                         :data="test"
                         style="width: 100%"
                         height="560px">
+
                     <el-table-column
-                            prop="date"
-                            label="日期"
-                            width="150">
-                    </el-table-column>
-                    <el-table-column
-                            prop="name"
+                            prop="username"
                             label="姓名"
                             width="120">
+                    </el-table-column>
+                    <el-table-column
+                            prop="phone"
+                            label="电话"
+                            width="150">
                     </el-table-column>
                     <el-table-column
                             prop="province"
@@ -102,9 +104,9 @@
         <!-- dialog-->
         <el-dialog title="用户信息" :visible.sync="dialogFormVisible" >
             <div style="font-size: 15px;margin: 5px 5px" >
-                <p>姓名：{{type.name}}</p>
+                <p>姓名：{{type.username}}</p>
                 <p>地址：{{type.address}}</p>
-                <p>日期：{{type.date}}</p>
+                <p>电话：{{type.phone}}</p>
                 <p>邮编：{{type.zip}}</p>
                 <p>省份：{{type.province}}</p>
                 <p>城市：{{type.city}}</p>
@@ -117,21 +119,22 @@
         <el-dialog title="修改用户信息" :visible.sync="dialogVisible">
                 <el-form :model="form">
                     <el-form-item label="姓名：" :label-width="formLabelWidth">
-                        <el-input v-model="type.name" autocomplete="off" :disabled="true"></el-input>
+                        <el-input v-model="type.username" autocomplete="off" :disabled="true"></el-input>
                     </el-form-item>
                     <el-form-item label="地址：" :label-width="formLabelWidth">
                         <el-input v-model="type.address" autocomplete="off"></el-input>
                     </el-form-item>
-                    <el-form-item label="日期：" :label-width="formLabelWidth">
-                        <el-input v-model="type.date" autocomplete="off" :disabled="true"></el-input>
+                    <el-form-item label="电话：" :label-width="formLabelWidth">
+                        <el-input v-model="type.phone" autocomplete="off" ></el-input>
                     </el-form-item>
                     <el-form-item label="邮编：" :label-width="formLabelWidth">
                         <el-input v-model="type.zip" autocomplete="off"></el-input>
                     </el-form-item>
                     <el-form-item label="省份：" :label-width="formLabelWidth">
                         <el-select v-model="type.province" placeholder="请选择活动区域">
-                            <el-option label="区域一" value="shanghai"></el-option>
-                            <el-option label="区域二" value="beijing"></el-option>
+                            <el-option label="佛山" value="佛山"></el-option>
+                            <el-option label="广州" value="广州"></el-option>
+                            <el-option label="上海" value="上海"></el-option>
                         </el-select>
                     </el-form-item>
                     <el-form-item label="城市：" :label-width="formLabelWidth">
@@ -169,6 +172,7 @@
        height: 30px;
    }
 </style>
-<script src="js/userMessage.js"></script>
+<script src="./js/utils/TimePickerOption.js"></script>
+<script type="module" src="./js/userMessage.js"></script>
 </body>
 </html>

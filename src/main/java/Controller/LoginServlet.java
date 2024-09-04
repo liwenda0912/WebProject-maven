@@ -1,7 +1,7 @@
-package servlet;
+package Controller;
 import entity.Enum;
 import service.sqlService;
-import Utils.sqlConnect;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
             response.getWriter().write(message);
         }else {
             try {
-                String dbname = "testrunningdata.users";
+                String dbname = "testrunningdata.user";
                 ResultSet data =  sqlService.getSelectLogin(dbname);//调用sqlConnect的getSelect方法
                 while (data.next()){
                     if (Objects.equals(UserName, data.getString("username"))) {

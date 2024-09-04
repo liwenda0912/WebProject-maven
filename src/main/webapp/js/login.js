@@ -1,4 +1,7 @@
+import {request} from "./utils/request.js";
+
 let username =JSON.parse(localStorage.getItem("name"))
+console.log(username+"555");
 // 监听indexPageshow.js父页面的通讯
 window.addEventListener("message",function(e){
     console.log(e.data)
@@ -18,7 +21,6 @@ window.addEventListener("message",function(e){
         test.$data.dialogCode= e.data;
         console.log("取消注册"+e.data); // message
     }
-
 }, false);
 
 
@@ -35,13 +37,14 @@ var login = new Vue({
         // 退出登录
         login_down() {
             localStorage.removeItem("name");
+            console.log("退出登录成功")
             this.$message({
                 message: '退出登录成功！',
                 center: true
             });
             setTimeout(() => {
                 location.reload();
-            }, 100);
+            }, 1000);
         },
         test: function () {
             this.$router.push({path: '/Result'})
@@ -54,7 +57,7 @@ var login = new Vue({
             let input_passwd = localStorage.getItem("passwd");
             if (newData===1){
                 // 向登录servlet请求登录申请
-                axios({
+                request({
                     method: 'Post',
                     url: 'LoginServlet',
                     params: {
@@ -86,15 +89,20 @@ var test = new Vue({
         return {
             dialogFormVisible: false,
             dialogCode:0,
-            ruleForm: {
-                user_name: '',
-                register_passwd: '',
-                region: '',
-
-                delivery: false,
-                type: [],
-                resource: '',
-                desc: ''
+            type_data:{
+                phone:"",
+                address:"",
+                city:"",
+                province:"",
+                ruleForm: {
+                     user_name: '',
+                     register_passwd: '',
+                     region: '',
+                     delivery: false,
+                     type: [],
+                     resource: '',
+                     desc: ''
+            }
             },
             // 输入框校验规则
             rules:{
@@ -133,30 +141,35 @@ var test = new Vue({
                         method: 'Post',
                         url: 'RegisterServlet',
                         params: {
-                            username:self.ruleForm.user_name,
-                            passwd:self.ruleForm.register_passwd
-                        }
+                            username:self.type_data.ruleForm.user_name,
+                            passwd:self.type_data.ruleForm.register_passwd
+                        },
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        data:this.type_data
                     }).then(res=>{
                         //获取servlet响应的信息
                         var data = res.data;
-                        switch(data.notice){
-                            case "1":
+                        console.log(data)
+                        switch(data.code){
+                            case 1:
                                 this.$message({
-                                    message: data.message_register,
+                                    message: data.message,
                                     center: true,
                                     type:"success"
                                 });
                                 break
-                            case "0":
+                            case 0:
                                 this.$message({
-                                    message: data.message_register,
+                                    message: data.message,
                                     center: true,
                                     type:'error'
                                 });
                                 break
-                            case "3":
+                            case 500:
                                 this.$message({
-                                    message: data.message_register,
+                                    message: data.message,
                                     center: true,
                                     type:'error'
                                 });
@@ -169,10 +182,18 @@ var test = new Vue({
                     self.$data.dialogFormVisible = false;
                     this.$refs.passwd.clear();
                     this.$refs.user.clear();
+                    this.$refs.city.clear();
+                    this.$refs.address.clear();
+                    this.$refs.province.clear();
+                    this.$refs.phone.clear();
                 }else {
                     // 清除输入框
-                    this.$refs.passwd.clear();
-                    this.$refs.user.clear();
+                    // this.$refs.passwd.clear();
+                    // this.$refs.user.clear();
+                    // this.$refs.city.clear();
+                    // this.$refs.address.clear();
+                    // this.$refs.province.clear();
+                    // this.$refs.phone.clear();
                     return false;
                 }
             })

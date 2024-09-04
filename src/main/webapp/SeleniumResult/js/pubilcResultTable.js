@@ -1,39 +1,42 @@
+import {request} from "../../js/utils/request";
+
 window.addEventListener("message",function(e) {
     console.log(e.data.split(":")[1])
     if(e.data.split(":")[0]==="page"){
         // User.$data.pageNum_1 =e.data.split(":")[1]
-        User.$data.pageNum_1=e.data.split(":")[1]
+        publicResult.$data.pageNum_1=e.data.split(":")[1]
     }else {
-        User.$data.pageShowNum = parseInt(e.data.split(":")[1])
+        publicResult.$data.pageShowNum = parseInt(e.data.split(":")[1])
     }
 }, false);
 
-var User =new Vue({
-    el:"#app_tabs",
+var publicResult =new Vue({
+    el:"#public_tabs",
     data() {
         return {
-            pickerOptions: {
-                shortcuts: [{
-                    text: '今天',
-                    onClick(picker) {
-                        picker.$emit('pick', new Date());
-                    }
-                }, {
-                    text: '昨天',
-                    onClick(picker) {
-                        const date = new Date();
-                        date.setTime(date.getTime() - 3600 * 1000 * 24);
-                        picker.$emit('pick', date);
-                    }
-                }, {
-                    text: '一周前',
-                    onClick(picker) {
-                        const date = new Date();
-                        date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
-                        picker.$emit('pick', date);
-                    }
-                }]
-            },
+            // pickerOptions:picker_test,
+            // pickerOptions: {
+            //     shortcuts: [{
+            //         text: '今天',
+            //         onClick(picker) {
+            //             picker.$emit('pick', new Date());
+            //         }
+            //     }, {
+            //         text: '昨天',
+            //         onClick(picker) {
+            //             const date = new Date();
+            //             date.setTime(date.getTime() - 3600 * 1000 * 24);
+            //             picker.$emit('pick', date);
+            //         }
+            //     }, {
+            //         text: '一周前',
+            //         onClick(picker) {
+            //             const date = new Date();
+            //             date.setTime(date.getTime() - 3600 * 1000 * 24 * 7);
+            //             picker.$emit('pick', date);
+            //         }
+            //     }]
+            // },
             activeNames:"",
             value3:"",
             input1:"",
@@ -52,15 +55,16 @@ var User =new Vue({
         }
     },
     mounted(){
-        this.loading=true
+        // this.loading=true
         this.onshow();
+        console.log(this.data().pickerOptions)
     },
     methods: {
         editButtom(type){
-            var  let = this
+            // var  let = this
             this.dialogVisible = false
             console.log(type)
-            axios({
+            request({
                 method: 'Post',
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -77,7 +81,6 @@ var User =new Vue({
                         type:"success",
                         center: true,
                         message:res.data.message,
-
                     })
                 }
             },err=>{
@@ -124,9 +127,9 @@ var User =new Vue({
         },
         onshow(){
             let self =this
-            axios({
+            request({
                 method: 'Get',
-                url: 'http://localhost:8086/mavenproject_war_exploded/DataServlet',
+                url: '/DataServlet',
                 params: {
                     dbname:"setting",
                     pageNum:self.$data.pageNum_1,
@@ -135,6 +138,7 @@ var User =new Vue({
             }).then(res=>{
                 //获取用户servlet的登录请求响应
                 var data = res.data;
+                console.log(data)
                 this.send(data[data.length-1]);
                 for (var i =0;i<data.length-1;i++){
                     this.test.push(data[i]);

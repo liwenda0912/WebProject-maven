@@ -18,7 +18,7 @@
     }
 </style>
 <head>
-    <title>www.webapp.servlet.pop.com</title>
+    <title>www.webapp.Controller.pop.com</title>
 </head>
 <body>
 <div id="container-bar"></div>
@@ -35,6 +35,12 @@
         },
         yAxis:{
             // data:[1,5,10,15,20]
+        },
+        toolbox: {
+            right:15,
+            feature: {
+                saveAsImage: {}
+            }
         },
         series:[
             {

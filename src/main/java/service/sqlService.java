@@ -1,19 +1,57 @@
 package service;
 import Dao.Tb_user;
+import Dao.To_setting;
+import Utils.mybatisUtils;
 import Utils.sqlConnect;
+import entity.Setting;
+import entity.User;
+import org.apache.ibatis.session.RowBounds;
+import org.apache.ibatis.session.SqlSession;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.sql.*;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import static jdk.internal.org.objectweb.asm.Type.getType;
+@Service
+public class sqlService {
 
-public class sqlService implements Tb_user {
+    mybatisUtils mybatisUtils = new mybatisUtils();
+    SqlSession sqlsession;
+    {
+        try {
+            sqlsession = mybatisUtils.MybatisUtils();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-    @Override
+    public List<User> findAll(RowBounds rowbounds) throws IOException {
+        List<User> data = sqlsession.getMapper(Tb_user.class).findAll(rowbounds);
+        return data;
+    }
+
+    public int upDataUser(User user) throws IOException {
+        try {
+//          SqlSession sqlsession = mybatisUtils.MybatisUtils();
+            int r = sqlsession.getMapper(Tb_user.class).upDataUser(user);
+            sqlsession.commit();
+            return r;
+        } catch (IOException e) {
+            sqlsession.rollback();
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public List<Setting> findSettingAll(RowBounds rowbounds) throws IOException {
+        List<Setting> data = sqlsession.getMapper(To_setting.class).findSettingAll(rowbounds);
+        return data;
+    }
     public ResultSet getSelectLogin(String dbname) throws ClassNotFoundException {
         ResultSet data = null;
         try {
@@ -31,10 +69,10 @@ public class sqlService implements Tb_user {
         return data;
     }
 
-    @Override
     public ResultSet getSelect(String dbname, Integer NUM, Integer pageNUM) throws ClassNotFoundException {
         ResultSet data = null;
         try {
+
             //连接数据库
             Connection conn = sqlConnect.getConnection();
             //创建statement
@@ -49,7 +87,6 @@ public class sqlService implements Tb_user {
         return data;
 
     }
-    @Override
     public int getCount(String dbname) {
         ResultSet count_num;
         int Count_data =0;
@@ -71,7 +108,6 @@ public class sqlService implements Tb_user {
         return Count_data;
     }
 
-    @Override
     public int delTbp(String username) {
         // TODO Auto-generated method stub
         Connection conn=null;
@@ -92,7 +128,6 @@ public class sqlService implements Tb_user {
         return 0;
     }
 
-    @Override
     public int addTbp(String username, String pwd) {
         // TODO Auto-generated method stub
         Connection conn=null;
@@ -100,13 +135,18 @@ public class sqlService implements Tb_user {
             //连接数据库
             conn= sqlConnect.getConnection();
             //执行sql
-            String sql="insert into users(username,password,address,phone,alias) values(?,?,?,?,?)";
+            String sql="insert into user(username,password,address,phone,alias,city,province,zip,date) values(?,?,?,?,?,?,?,?,?)";
             PreparedStatement pst=conn.prepareStatement(sql);
             pst.setString(1,username);
             pst.setString(2,pwd);
             pst.setString(3,"广州");
-            pst.setString(4,"null");
-            pst.setString(5,"");
+            pst.setString(4,"110");
+            pst.setString(5,"null");
+            pst.setString(6,"广州");
+            pst.setString(7,"广东");
+            pst.setString(8,"810000");
+            pst.setString(9,"2024-08-05");
+
             pst.executeUpdate();
         } catch (Exception e) {
             // TODO: handle exception
@@ -117,7 +157,6 @@ public class sqlService implements Tb_user {
         }
         return 0;
     }
-    @Override
     public int updateTbp(String dbname, Map<String, String[]> params) {
         // TODO Auto-generated method stub
         Connection conn=null;
@@ -140,7 +179,7 @@ public class sqlService implements Tb_user {
                             // key是否为setting_id
                             if(!paramName.equals("setting_id")){
                                 // 执行sql语句
-                                String sql="update "+dbname+" set "+paramName+"=? where "+"=?";
+                                String sql="update "+dbname+" set "+paramName+"=? where "+"setting_id=?";
                                 PreparedStatement pst=conn.prepareStatement(sql);
                                 pst.setString(1,paramValue);
                                 pst.setString(2,setting_id);
@@ -149,16 +188,38 @@ public class sqlService implements Tb_user {
                         }
                     }
                 }
+            }else {
+                String user_id = params.get("id")[0];
+                System.out.print(dbname);
+                for (Map.Entry<String, String[]> entry : params.entrySet()) {
+                    //获取key
+                    String paramName = entry.getKey();
+                    //key是否为dbname
+                    if (!paramName.equals("dbname")){
+                        String[] paramValues = entry.getValue();
+                        for (String paramValue : paramValues) {
+                            // key是否为setting_id
+                            if(!paramName.equals("id")){
+                                // 执行sql语句
+                                String sql="update "+dbname+" set "+paramName+"=? where "+"id=?";
+                                PreparedStatement pst=conn.prepareStatement(sql);
+                                pst.setString(1,paramValue);
+                                pst.setString(2,user_id);
+                                pst.executeUpdate();
+                            }
+                        }
+                    }
+                }
             }
+            return 1;
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+           return 0;
         }finally {
             sqlConnect.close(conn);
         }
-        return 0;
     }
-    @Override
     public int readUpdata(JSONArray array_text) {
         // TODO Auto-generated method stub
         Connection conn=null;

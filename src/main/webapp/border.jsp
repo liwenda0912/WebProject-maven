@@ -13,9 +13,9 @@
 <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js" type="text/javascript" charset="utf-8"></script>
 <style>
     #container{
-        width: 603px;
+        width: 608px;
         height: 180px;
-        padding-bottom:50px;
+        padding-bottom:40px;
     }
 </style>
 <body>
@@ -23,11 +23,11 @@
 <script>
     const PieEChart = echarts.init(document.getElementById("container"),'pie');
     const PieOption = {
-        // title: {
-        //     text: '各商品销量占比',
-        //     subtext: 'A商场情况分析',
-        //     left: 'center'
-        // },
+        title: {
+            text: '各商品销量占比',
+            subtext: 'A商场情况分析',
+            // left: 'left'
+        },
         tooltip: {
             trigger: 'item',
             // formatter: '{a} <br/>{b} : {c} ({d}%)'
@@ -37,6 +37,12 @@
         label: {
             show: true,
             formatter: '{b}: {d}%'
+        },
+        toolbox: {
+            right:15,
+            feature: {
+                saveAsImage: {}
+            }
         },
         legend: {
             // type: 'scroll',

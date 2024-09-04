@@ -12,16 +12,26 @@
 <link rel="stylesheet"  href="//unpkg.com/element-ui@2.15.14/lib/theme-chalk/index.css">
 <body>
 <div id="app_tabs" class="app_tabs_">
-    <el-tabs type="border-card">
-        <el-tab-pane label="用户管理">
-            <iframe src="table/miniSetting.jsp"  scrolling="no" style="width: 100%;height:100%;border: 0"></iframe>
+    <template>
+     <el-tabs v-model="activeName" type="border-card" @tab-click="handleClick">
+        <el-tab-pane label="配置管理" name="first">
+            <div v-if="miniSetting">
+                <iframe src="table/miniSetting.jsp"  scrolling="no" style="width: 100%;height:104%;border: 0" ></iframe>
+            </div>
         </el-tab-pane>
-        <el-tab-pane label="配置管理">
-            <iframe src="table.jsp"  scrolling="no" style="width: 11960px;height:900px;border: 0"></iframe>
+        <el-tab-pane label="用户管理" name="second">
+            <div v-if="userManage">
+                <iframe src="table.jsp"  scrolling="no" style="width: 11960px;height:900px;border: 0" ></iframe>
+            </div>
         </el-tab-pane>
-        <el-tab-pane label="角色管理">角色管理</el-tab-pane>
-        <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
-    </el-tabs>
+        <el-tab-pane label="角色管理" name="third">
+            <div v-if="roleManage">角色管理</div>
+        </el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourth">
+            <div v-if="time_">定时任务补偿 </div>
+        </el-tab-pane>
+     </el-tabs>
+    </template>
 </div>
 </body>
 <style>

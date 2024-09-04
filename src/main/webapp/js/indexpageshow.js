@@ -28,49 +28,81 @@ var APPLE = new Vue({
             }
             switch (newData.toString()) {
                 case "1":
-                    self.$data.index_show=true
+                    self.$data.index_show=false
                     self.$data.test_data=false
+                    setTimeout(() => {
+                        self.$data.index_show=true
+                    }, 1000);
                     break
                 case "2-1":
                     self.$data.index_show=false
-                    self.$data.test_data=true
+                    self.$data.test_data=false
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "2-2":
                     self.$data.index_show=false
-                    self.$data.test_data=true
+                    self.$data.test_data=false
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "2-3":
+                    self.$data.test_data=false
                     self.$data.index_show=false
-                    self.$data.test_data=true
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "2-4-1":
-                    self.$data.userMessage=false
+                    console.log(555)
+                    self.$data.test_data=false
                     self.$data.index_show=false
-                    self.$data.test_data=true
+                    self.$data.userMessage=false
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "2-4-2":
+                    self.$data.test_data=false
                     self.$data.index_show=false
-                    self.$data.test_data=true
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "2-4-3":
+                    self.$data.test_data=false
                     self.$data.index_show=false
-                    self.$data.test_data=true
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "2-4-4":
+                    self.$data.test_data=false
                     self.$data.index_show=false
-                    self.$data.test_data=true
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "3":
+                    self.$data.test_data=false
                     self.$data.index_show=false
-                    self.$data.test_data=true
-
+                    setTimeout(() => {
+                        self.$data.test_data=true
+                    }, 1000);
                     break
                 case "4":
+                    self.$data.userMessage=false
                     self.$data.index_show=false
                     self.$data.test_data=false
-                    self.$data.userMessage=true
+                    setTimeout(() => {
+                        console.log(555)
+                        self.$data.userMessage=true
+                    }, 1000);
                     break
             }
+            APPLE.index_code=0
         }
 
     }

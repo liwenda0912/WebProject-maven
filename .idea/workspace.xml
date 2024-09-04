@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="mavenproject:war" />
       <artifact name="mavenproject:war exploded" />
     </artifacts-to-build>
   </component>
@@ -11,45 +10,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/To_Json.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/To_read.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/jsonService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/DataServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servlet/DataUpdataServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/JDBC.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SqlMapConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/table/js/miniSetting.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/RegisterServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/To_setting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/mapUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/mybatisUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/To_Json.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/commonResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/RegisterEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/RowBounds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Setting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SettingMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/SeleniumResult/PublicResultTable.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/SeleniumResult/RusultTable.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/SeleniumResult/js/pubilcResultTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/utils/TimePickerOption.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/Tb_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/Tb_user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/jsonTransform.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/jsonTransform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/To_Json.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/To_read.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/To_read.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/jsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/jsonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/numService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/numService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/readService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/readService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/sqlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/sqlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/userServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DataServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/DataServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DataUpdataServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/DataUpdataServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UploadServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/JDBC.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SqlMapConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SqlMapConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/border-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/border-bar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/bottom.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/bottom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/data.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/data.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/border.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/border.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index_import.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index_import.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/indexpageshow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/indexpageshow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/js/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/js/userMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/userMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/pagination.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pubilc/uploadFile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pubilc/uploadFile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/tab_table.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/tab_table.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/table.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/js/miniSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/js/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/pagination.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/userMessage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userMessage.jsp" afterDir="false" />
     </list>
@@ -67,17 +83,20 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="package.json" />
         <option value="CSS File" />
-        <option value="Jsp File" />
-        <option value="JavaScript File" />
         <option value="servlet" />
-        <option value="Interface" />
-        <option value="FxmlFile" />
-        <option value="XML File " />
         <option value="Resource Bundle" />
-        <option value="properties" />
+        <option value="XML File " />
+        <option value="FxmlFile" />
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="package.json" />
+        <option value="properties" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -93,9 +112,11 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/usermessage.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/test/RequestForm.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/userMessage.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -124,40 +145,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "maven",
-    "ignore.virus.scanning.warn.message": "true",
-    "javascript.nodejs.core.library.configured.version": "16.18.1",
-    "javascript.nodejs.core.library.typings.version": "16.18.1",
-    "last_directory_selection": "D:/Java/mavenproject/src/main/java",
-    "last_opened_file_path": "D:/李文达/HelloWorld.Java-master/wechat/WeChat/out/production/WeChat/interfacetest",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "fileTemplates",
-    "spring.configuration.checksum": "47e0a6b9ab2ad5d0ed1ab0d00da97e08",
-    "ts.external.directory.path": "D:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.1.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;maven&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.18.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.1&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_directory_selection&quot;: &quot;D:/Java/mavenproject/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java/SpringbootProject&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.HTML&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;47e0a6b9ab2ad5d0ed1ab0d00da97e08&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.1.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite",
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;,
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="service" />
@@ -171,11 +194,11 @@
       <recent name="D:\Java\mavenproject\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java\mavenproject\src\main\resources" />
-      <recent name="D:\Java\mavenproject\src\main\resources\application" />
-      <recent name="D:\Java\mavenproject\src\main\resources\mapper" />
-      <recent name="D:\Java\mavenproject\src\main\webapp\table\js" />
       <recent name="D:\Java\mavenproject\src\main\webapp\table" />
+      <recent name="D:\Java\mavenproject\src\main\resources\mapper" />
+      <recent name="D:\Java\mavenproject\src\main\resources" />
+      <recent name="D:\Java\mavenproject\src\main\java\Utils" />
+      <recent name="D:\Java\mavenproject\src\main\resources\application" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="Dao" />
@@ -183,7 +206,14 @@
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.test">
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.51">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="mavenproject" />
@@ -191,12 +221,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sqlConnect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Utils.sqlConnect" />
+    <configuration name="All in generated-requests" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="BaseTest04.testQueryStartCharge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mavenproject" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="entity.*" />
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.BaseTest04" />
+      <option name="METHOD_NAME" value="testQueryStartCharge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringBootApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="mavenproject" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="demo.SpringBootApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="demo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -204,21 +256,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <module name="mavenproject" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="head_new.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/pubilc/head_new.jsp">
-      <method v="2" />
-    </configuration>
-    <configuration name="test.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8085/mavenproject_war_exploded/test.jsp">
-      <method v="2" />
-    </configuration>
     <configuration name="Tomcat 8.0.51" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.51" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8086/mavenproject_war_exploded/" />
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -310,20 +348,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.test" />
-      <item itemvalue="Application.sqlConnect" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="JavaScript Debug.head_new.jsp" />
-      <item itemvalue="JavaScript Debug.test.jsp" />
+      <item itemvalue="HTTP Request.All in generated-requests" />
+      <item itemvalue="HTTP Request.generated-requests | #1" />
+      <item itemvalue="JUnit.BaseTest04.testQueryStartCharge" />
+      <item itemvalue="Spring Boot.SpringBootApp" />
       <item itemvalue="Tomcat Server.Tomcat 8.0.51" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.test" />
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.All in generated-requests" />
+        <item itemvalue="Spring Boot.SpringBootApp" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.sqlConnect" />
-        <item itemvalue="JavaScript Debug.head_new.jsp" />
-        <item itemvalue="JavaScript Debug.test.jsp" />
+        <item itemvalue="JUnit.BaseTest04.testQueryStartCharge" />
       </list>
     </recent_temporary>
   </component>
@@ -388,7 +426,18 @@
       <workItem from="1722761929483" duration="268000" />
       <workItem from="1722762220221" duration="9218000" />
       <workItem from="1722907143698" duration="32683000" />
-      <workItem from="1723015012696" duration="7652000" />
+      <workItem from="1723015012696" duration="28137000" />
+      <workItem from="1723167311227" duration="45665000" />
+      <workItem from="1724291831439" duration="5241000" />
+      <workItem from="1724319716922" duration="39215000" />
+      <workItem from="1724934265367" duration="3388000" />
+      <workItem from="1724938423231" duration="779000" />
+      <workItem from="1724939217608" duration="1830000" />
+      <workItem from="1724941360901" duration="5770000" />
+      <workItem from="1725013435580" duration="57000" />
+      <workItem from="1725079549242" duration="23190000" />
+      <workItem from="1725332561776" duration="13077000" />
+      <workItem from="1725412704576" duration="4913000" />
     </task>
     <task id="LOCAL-00002" summary="maven项目">
       <option name="closed" value="true" />
@@ -478,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722306500682</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="增加mybatis基础使用">
+      <option name="closed" value="true" />
+      <created>1723025313919</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1723025313919</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +573,8 @@
     <MESSAGE value="导航栏跳转和注册操作优化" />
     <MESSAGE value="工具层，entity层，服务层和dao层的编写" />
     <MESSAGE value="updatafile完善功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="updatafile完善功能" />
+    <MESSAGE value="增加mybatis基础使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加mybatis基础使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -525,6 +583,11 @@
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/common/To_read.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

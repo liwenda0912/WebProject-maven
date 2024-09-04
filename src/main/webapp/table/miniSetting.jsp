@@ -201,7 +201,8 @@
         height: 30px;
     }
 </style>
-<script src="js/miniSetting.js"></script>
+<script src="../js/utils/TimePickerOption.js"></script>
+<script type="module"  src="miniSetting.js"></script>
 </body>
 </html>
 

@@ -27,10 +27,10 @@
   </el-pagination>
 </div>
 </body>
-<style>
-    .el-select-dropdown.el-popper{
-        margin-top: 60px;
-    }
-</style>
-<script src="js/pagination.js"></script>
+<%--<style>--%>
+<%--    .el-select-dropdown.el-popper{--%>
+<%--        margin-top: 30px;--%>
+<%--    }--%>
+<%--</style>--%>
+<script src="pagination.js"></script>
 </html>

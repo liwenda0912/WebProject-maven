@@ -22,7 +22,7 @@
 <script src="//unpkg.com/element-ui@2.15.14/lib/index.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <head>
-    <title>www.webapp.servlet.pop.com</title>
+    <title>www.webapp.Controller.pop.com</title>
 
 </head>
 <body>
@@ -36,10 +36,10 @@
          <iframe id="index_iframe" src="index_import.jsp" scrolling="no" style="border: 0;width: 100%;height: 100%"></iframe>
      </div>
      <div class="work_platform_data" v-else-if="test_data">
-        <iframe src="data.jsp" scrolling="no" style="border: 0;width: 100%;height: 100%"></iframe>
+        <iframe src="data.jsp" scrolling="no" style="border: 0;width: 100%;height: 104%"></iframe>
      </div>
      <div v-else-if="userMessage">
-         <iframe  src="userMessage.jsp" scrolling="no" style="border: 0;width: 100%;height: 100%"></iframe>
+         <iframe  src="userMessage.jsp" scrolling="no" style="border: 0;width: 100%;height: 104%"></iframe>
      </div>
     </div>
     <div class="bottom">
