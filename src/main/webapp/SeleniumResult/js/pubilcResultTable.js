@@ -84,7 +84,12 @@ var publicResult =new Vue({
                     })
                 }
             },err=>{
-                console.log(err);
+                console.log(err.message);
+                this.$message({
+                    message:err.message,
+                    type:"error",
+                    center:true
+                })
             });
         },
         handleChange(val) {
@@ -147,7 +152,12 @@ var publicResult =new Vue({
                     this.loading=false;
                 }, 2000);
             },err=>{
-                console.log(err);
+                console.log(err.message);
+                this.$message({
+                    message:err.message,
+                    type:"error",
+                    center:true
+                })
             });
         }
     },watch:{

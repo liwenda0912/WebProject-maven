@@ -128,7 +128,12 @@ var User =new Vue({
                     })
                 }
             },err=>{
-                console.log(err);
+                console.log(err.message);
+                this.$message({
+                    message:err.message,
+                    type:"error",
+                    center:true
+                })
             });
         },
         //页面加载就获取数据
@@ -155,7 +160,12 @@ var User =new Vue({
                     this.loading=false;
                 }, 2000);
             },err=>{
-                console.log(err);
+                console.log(err.message);
+                this.$message({
+                    message:err.message,
+                    type:"error",
+                    center:true
+                })
             });
         }
     },

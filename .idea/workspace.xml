@@ -9,65 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/RegisterServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Dao/To_setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/mapUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/mybatisUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/common/To_Json.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/common/commonResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/RegisterEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/RowBounds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Setting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SettingMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sqlMapConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/SeleniumResult/PublicResultTable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/SeleniumResult/RusultTable.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/SeleniumResult/js/pubilcResultTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/html/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/utils/TimePickerOption.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="f04f56fc-fd81-4c8a-be26-0c9f859ea72c" name="Changes" comment="解决导航栏和tabs加载优化问题">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/Tb_user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/Tb_user.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/To_Json.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/To_read.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/common/To_read.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/jsonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/jsonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/numService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/numService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/readService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/readService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/sqlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/sqlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DataServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/DataServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/DataUpdataServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/DataUpdataServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/Loginservlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/RegisterServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/UploadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/UploadServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/JDBC.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SqlMapConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SqlMapConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/border-bar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/border-bar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/border.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/border.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index_import.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index_import.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/indexpageshow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/indexpageshow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/table.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/userMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/userMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/tab_table.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/tab_table.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/js/miniSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/js/pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/pagination.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/pagination.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/pagination.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/test.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/test.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/userMessage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userMessage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/table/miniSetting.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -437,7 +381,7 @@
       <workItem from="1725013435580" duration="57000" />
       <workItem from="1725079549242" duration="23190000" />
       <workItem from="1725332561776" duration="13077000" />
-      <workItem from="1725412704576" duration="4913000" />
+      <workItem from="1725412704576" duration="6673000" />
     </task>
     <task id="LOCAL-00002" summary="maven项目">
       <option name="closed" value="true" />
@@ -535,7 +479,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723025313919</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="解决导航栏和tabs加载优化问题">
+      <option name="closed" value="true" />
+      <created>1725421782446</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1725421782446</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +504,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/maven" />
+                        <option value="maven" />
                       </list>
                     </value>
                   </entry>
@@ -574,7 +526,8 @@
     <MESSAGE value="工具层，entity层，服务层和dao层的编写" />
     <MESSAGE value="updatafile完善功能" />
     <MESSAGE value="增加mybatis基础使用" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加mybatis基础使用" />
+    <MESSAGE value="解决导航栏和tabs加载优化问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决导航栏和tabs加载优化问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

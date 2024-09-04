@@ -70,7 +70,12 @@ var login = new Vue({
                     console.log(res.data+"   "+data.code+data.message);
                     window.location.href=("Result.jsp?data="+data.code+"&message="+data.message)
                 },err=>{
-                    console.log(err);
+                    console.log(err.message);
+                    this.$message({
+                        message:err.message,
+                        type:"error",
+                        center:true
+                    })
                 });
                 //清除登录获取的登录账号信息
                 localStorage.removeItem("username");
