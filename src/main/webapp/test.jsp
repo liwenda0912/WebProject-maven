@@ -159,6 +159,87 @@
 
 <%--</html>--%>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>异步加载数据</title>
+    <!-- 1. 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <!-- 2. 引入jQuery.js文件 -->
+    <script src="https://libs.cdnjs.net/jquery/3.4.1/jquery.js"></script>
+    <!-- 3. 引入 echarts.js -->
+    <script src="js/echarts.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function() {
+        // 4. 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+        // 异步加载，方法二：
+        // 5. 指定配置项 和 空的坐标轴
+        myChart.setOption({
+            title: {
+                text: 'ECharts异步加载数据示例' // 图表标题
+            },
+            tooltip: {},
+            legend: {
+                data:['销量']       // 图例
+            },
+            xAxis: {
+                data: []			// 空数据
+            },
+            yAxis: {},              // y轴默认自动
+            series: [{
+                // 柱状图
+                type: 'bar',
+                data: [],			// 空数据
+                // 显示标签数量
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'     // 显示位置
+                    }
+                },
+                // 配置样式
+                itemStyle: {
+                    //通常情况下样式
+                    normal:{
+                        // 每个柱子的颜色即为colorList数组里的每一项，如果柱子数目多于colorList的长度，则柱子颜色循环使用该数组
+                        color: function (params){
+                            var colorList = ['#8dc63f','#add8e6','#ffb6c1','#f37b1d','#A6A6D2','#F0E68C','#CA8EC2'];
+                            return colorList[params.dataIndex];
+                        }
+                    },
+                    // 鼠标悬停时，显示强调效果
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+            }],
+        });
+
+        // 6. 异步加载数据
+        $.get('data/data.json').done(function(data){
+            // 填入数据到上面空模板
+            myChart.setOption({
+                xAxis: {
+                    data: data.type_list
+                },
+                series: [{
+                    // 注意：！！！根据名字对应到相应的系列
+                    name: '销量',
+                    data: data.num_list
+                }]
+            })
+        })
+    })
+</script>
+</body>
+</html>
+
 
 
 <script src="//unpkg.com/vue@2/dist/vue.js"></script>

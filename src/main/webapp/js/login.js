@@ -46,9 +46,7 @@ var login = new Vue({
                 location.reload();
             }, 1000);
         },
-        test: function () {
-            this.$router.push({path: '/Result'})
-        }
+
     },watch:{
         // 监听stateCode状态
         stateCode: function (newData,oldData){
@@ -134,6 +132,9 @@ var test = new Vue({
         }
     },
     methods: {
+        test_(){
+            this.$router.push({path: '/Result'})
+        },
         registered(formName){
             // rules校验输入框
             this.$refs[formName].validate((valid) => {

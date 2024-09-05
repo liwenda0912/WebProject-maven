@@ -197,7 +197,12 @@
       <version>RELEASE</version>
       <scope>compile</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.bitbucket.javatek/require -->
+      <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+          <version>4.5.14</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.bitbucket.javatek/require -->
   </dependencies>
   <build>
     <finalName>mavenproject</finalName>

@@ -146,8 +146,8 @@ public class sqlService {
             pst.setString(7,"广东");
             pst.setString(8,"810000");
             pst.setString(9,"2024-08-05");
-
             pst.executeUpdate();
+            return 0;
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -155,7 +155,6 @@ public class sqlService {
         }finally {
             sqlConnect.close(conn);
         }
-        return 0;
     }
     public int updateTbp(String dbname, Map<String, String[]> params) {
         // TODO Auto-generated method stub
@@ -247,6 +246,7 @@ public class sqlService {
                 pst.setString(9, (String) json.get("set_version"));
                 pst.executeUpdate();
             }
+            return 0;
         } catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
@@ -254,7 +254,6 @@ public class sqlService {
         }finally {
             sqlConnect.close(conn);
         }
-        return 0;
     }
 
 }

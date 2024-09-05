@@ -67,7 +67,7 @@ var User =new Vue({
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                url: 'http://localhost:8086/mavenproject_war_exploded/DataServlet',
+                url: '/DataServlet',
                 params: {
                     dbname:"setting",
                 },
@@ -82,11 +82,17 @@ var User =new Vue({
                 }
             },err=>{
                 console.log(err.message);
+                let self = this
+
+                // this.onshow();
+                // this.req(self.$data.pageShowNum,self.$data.pageNum_1);
                 this.$message({
                     message:err.message,
                     type:"error",
                     center:true
                 })
+                window.location.reload()
+                console.log(this.$data.test)
             });
         },
         handleChange(val) {
@@ -111,6 +117,37 @@ var User =new Vue({
             self.$data.type=row;
             this.dialogFormVisible=true;
         },
+        req(size,pageNum){
+            request({
+                method: 'Get',
+                url: 'DataServlet',
+                params: {
+                    dbname:"setting",
+                    pageNum:pageNum,
+                    pageSize:size
+                }
+            }).then(res=>{
+                //获取用户servlet的登录请求响应
+                var data = res.data;
+                console.log(data)
+                this.send(data[data.length-1]);
+                for (var i =0;i<data.length-1;i++){
+                    this.test.push(data[i]);
+                }
+                setTimeout(() => {
+                    this.loading=false;
+                }, 2000);
+            },err=>{
+                console.log(err.message);
+                // this.req(size,pageNum);
+                this.$message({
+                    message:err.message,
+                    type:"error",
+                    center:true
+                })
+
+            });
+        },
         edit(row){
             let self = this
             self.$data.type=row;
@@ -128,34 +165,7 @@ var User =new Vue({
             this.dialogVisible=false;
             this.dialogFormVisible=false;
             let self =this
-            request({
-                method: 'Get',
-                url: 'DataServlet',
-                params: {
-                    dbname:"setting",
-                    pageNum:self.$data.pageNum_1,
-                    pageSize:self.$data.pageShowNum
-                }
-            }).then(res=>{
-                //获取用户servlet的登录请求响应
-                var data = res.data;
-                console.log(data)
-                this.send(data[data.length-1]);
-                for (var i =0;i<data.length-1;i++){
-                    this.test.push(data[i]);
-                }
-                setTimeout(() => {
-                    this.loading=false;
-                }, 2000);
-            },err=>{
-                console.log(err.message);
-                this.$message({
-                    message:err.message,
-                    type:"error",
-                    center:true
-                })
-
-            });
+            this.req(self.$data.pageShowNum,self.$data.pageNum_1);
         }
     },watch:{
         pageNum_1: function (newData,oldData){

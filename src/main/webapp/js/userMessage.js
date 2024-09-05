@@ -134,6 +134,9 @@ var User =new Vue({
                     type:"error",
                     center:true
                 })
+               setTimeout(()=>{
+                   window.location.reload();
+               },2000)
             });
         },
         //页面加载就获取数据

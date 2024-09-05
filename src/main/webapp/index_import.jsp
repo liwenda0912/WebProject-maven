@@ -76,7 +76,7 @@
                 <el-form-item>
                     <el-button type="primary" @click="registered('type_data.ruleForm')">注册</el-button>
                     <el-button type="primary" @click="quit()">取消</el-button>
-                    <el-button type="primary" @click="test()">test</el-button>
+                    <el-button type="primary" @click="test_()">test</el-button>
                 </el-form-item>
             </div>
         </el-form>

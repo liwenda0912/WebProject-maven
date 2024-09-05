@@ -65,6 +65,8 @@ public class DataServlet extends HttpServlet {
             // 响应get请求返回json array列表
             response.getWriter().write(array.toString());
         } catch (SQLException e) {
+            String message = "{\"state\":\"true\",\"code\":\"404\",\"message\":\"服务器异常！\"}";
+            response.getWriter().write(message);
             throw new RuntimeException(e);
         }
     }
@@ -91,6 +93,7 @@ public class DataServlet extends HttpServlet {
                 selectData= sqlService.upDataUser(user);
             }
             //校验服务返回的结果
+            System.out.print(selectData);
             if (selectData==1){
                 //成功
                 String message = "{\"state\":\"true\",\"code\":\"200\",\"message\":\"修改成功！\"}";
@@ -101,7 +104,10 @@ public class DataServlet extends HttpServlet {
                 response.getWriter().write(message);
             }
         }catch (Exception e){
+            String message = "{\"state\":\"true\",\"code\":\"404\",\"message\":\"服务器异常！\"}";
+            response.getWriter().write(message);
             throw new Error(e);
+
         }
     }
 

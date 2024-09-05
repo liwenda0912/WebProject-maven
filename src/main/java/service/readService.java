@@ -55,7 +55,7 @@ public class readService implements To_read {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                message = "";
+                message = "服务器异常";
                 return message;
             }
             message = "文件上传成功";

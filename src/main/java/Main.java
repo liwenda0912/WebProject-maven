@@ -1,5 +1,7 @@
+import Utils.local;
 import org.json.JSONArray;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,8 +22,9 @@ public class Main {
 //
 //    }
 
-public static void main(String[] args) {
-
+public static void main(String[] args) throws IOException {
+            local local =new local();
+            System.out.print(local.getLocation());
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("key", "value");
             jsonObj.put("key1", "value");

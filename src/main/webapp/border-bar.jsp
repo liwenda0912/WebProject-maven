@@ -7,7 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
-<script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.2/echarts.min.js"></script>
+
+<%--<script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.js" type="text/javascript" charset="utf-8"></script>--%>
 <style>
     #container-bar{
         width: 400px;
@@ -24,6 +27,7 @@
 <div id="container-bar"></div>
 </body>
 <script>
+    var d=["data","test","ll","msg",'lls','555'];
     var BarEChart = echarts.init(document.getElementById("container-bar"),'bar');
     var BarOption = {
         title:{
@@ -31,7 +35,8 @@
         },
         tooltip:{},
         xAxis:{
-            data: ["data","test","ll","msg",'lls','555']
+            data: []
+            // ["data","test","ll","msg",'lls','555']
         },
         yAxis:{
             // data:[1,5,10,15,20]
@@ -47,10 +52,25 @@
                 name:"柱形图",
                 type:"bar",
                 color:['rgb(58 160 255 / 91%)'],
-                data:[1,8,3,4,30,50],
+                data:[]
+                    // [1,8,3,4,30,50],
             }
         ]
     };
     BarEChart.setOption(BarOption);
+
+    var BarOption_data={
+        xAxis: {
+            data: d
+        },
+        series: [{
+            // 注意：！！！根据名字对应到相应的系列
+            data:[1,8,3,4,30,50],
+
+        }]
+    };
+    setTimeout(()=>{
+        BarEChart.setOption(BarOption_data)
+    },5000)
 </script>
 </html>
